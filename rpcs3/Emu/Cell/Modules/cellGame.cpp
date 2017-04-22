@@ -791,7 +791,11 @@ error_code cellGameContentErrorDialog(s32 type, s32 errNeedSizeKB, vm::cptr<char
 		result = true;
 	};
 
-	dlg->Create(errorMsg);
+	// Run asynchronously in GUI thread
+	Emu.CallAfter([&]()
+	{
+		dlg->Create(errorMsg);
+	});
 
 	while (!result)
 	{
