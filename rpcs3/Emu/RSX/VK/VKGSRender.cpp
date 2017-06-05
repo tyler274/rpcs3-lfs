@@ -7,10 +7,6 @@
 #include "../Common/BufferUtils.h"
 #include "VKFormats.h"
 
-extern cfg::bool_entry g_cfg_rsx_overlay;
-extern cfg::bool_entry g_cfg_rsx_write_color_buffers;
-extern cfg::bool_entry g_cfg_rsx_write_depth_buffer;
-
 namespace
 {
 	u32 get_max_depth_value(rsx::surface_depth_format format)
@@ -451,13 +447,23 @@ namespace
 	}
 }
 
-VKGSRender::VKGSRender() : GSRender(frame_type::Vulkan)
+VKGSRender::VKGSRender() : GSRender()
 {
 	shaders_cache.load(rsx::old_shaders_cache::shader_language::glsl);
 
-	m_thread_context.createInstance("RPCS3");
-	m_thread_context.makeCurrentInstance(1);
-	m_thread_context.enable_debugging();
+	u32 instance_handle = m_thread_context.createInstance("RPCS3");
+
+	if (instance_handle > 0)
+	{
+		m_thread_context.makeCurrentInstance(instance_handle);
+		m_thread_context.enable_debugging();
+	}
+	else
+	{
+		LOG_FATAL(RSX, "Could not find a vulkan compatible GPU driver. Your GPU(s) may not support Vulkan, or you need to install the vulkan runtime and drivers");
+		m_device = VK_NULL_HANDLE;
+		return;
+	}
 
 #ifdef _WIN32
 	HINSTANCE hInstance = NULL;
@@ -466,15 +472,32 @@ VKGSRender::VKGSRender() : GSRender(frame_type::Vulkan)
 	std::vector<vk::physical_device>& gpus = m_thread_context.enumerateDevices();	
 	
 	//Actually confirm  that the loader found at least one compatible device
+	//This should not happen unless something is wrong with the driver setup on the target system
 	if (gpus.size() == 0)
 	{
 		//We can't throw in Emulator::Load, so we show error and return
-		LOG_FATAL(RSX, "Could not find a vulkan compatible GPU driver. Your GPU(s) may not support Vulkan, or you need to install the vulkan runtime and drivers");
+		LOG_FATAL(RSX, "No compatible GPU devices found");
 		m_device = VK_NULL_HANDLE;
 		return;
 	}
 
-	m_swap_chain = m_thread_context.createSwapChain(hInstance, hWnd, gpus[0]);
+	bool gpu_found = false;
+	std::string adapter_name = g_cfg.video.vk.adapter;
+	for (auto &gpu : gpus)
+	{
+		if (gpu.name() == adapter_name)
+		{
+			m_swap_chain = m_thread_context.createSwapChain(hInstance, hWnd, gpu);
+			gpu_found = true;
+			break;
+		}
+	}
+
+	if (!gpu_found || adapter_name.empty())
+	{
+		m_swap_chain = m_thread_context.createSwapChain(hInstance, hWnd, gpus[0]);
+	}
+
 #endif
 
 	m_device = (vk::render_device *)(&m_swap_chain->get_device());
@@ -556,7 +579,7 @@ VKGSRender::VKGSRender() : GSRender(frame_type::Vulkan)
 
 	vkCreateSemaphore((*m_device), &semaphore_info, nullptr, &m_present_semaphore);
 
-	if (g_cfg_rsx_overlay)
+	if (g_cfg.video.overlay)
 	{
 		size_t idx = vk::get_render_pass_location( m_swap_chain->get_surface_format(), VK_FORMAT_UNDEFINED, 1);
 		m_text_writer.reset(new vk::text_writer());
@@ -644,7 +667,7 @@ bool VKGSRender::on_access_violation(u32 address, bool is_writing)
 		return m_texture_cache.invalidate_address(address);
 	else
 	{
-		if (g_cfg_rsx_write_color_buffers || g_cfg_rsx_write_depth_buffer)
+		if (g_cfg.video.write_color_buffers || g_cfg.video.write_depth_buffer)
 		{
 			bool flushable, synchronized;
 			std::tie(flushable, synchronized) = m_texture_cache.address_is_flushable(address);
@@ -668,9 +691,12 @@ bool VKGSRender::on_access_violation(u32 address, bool is_writing)
 				//Just stall and get what we have at this point
 				if (std::this_thread::get_id() != rsx_thread)
 				{
-					//TODO: Guard this when the renderer is flushing the command queue, might deadlock otherwise
-					m_flush_commands = true;
-					m_queued_threads++;
+					{
+						std::lock_guard<std::mutex> lock(m_flush_queue_mutex);
+
+						m_flush_commands = true;
+						m_queued_threads++;
+					}
 
 					//This is awful!
 					while (m_flush_commands) _mm_pause();
@@ -1066,7 +1092,7 @@ void VKGSRender::copy_render_targets_to_dma_location()
 	if (!m_flush_draw_buffers)
 		return;
 
-	if (!g_cfg_rsx_write_color_buffers && !g_cfg_rsx_write_depth_buffer)
+	if (!g_cfg.video.write_color_buffers && !g_cfg.video.write_depth_buffer)
 		return;
 
 	//TODO: Make this asynchronous. Should be similar to a glFlush() but in this case its similar to glFinish
@@ -1075,7 +1101,7 @@ void VKGSRender::copy_render_targets_to_dma_location()
 
 	vk::enter_uninterruptible();
 
-	if (g_cfg_rsx_write_color_buffers)
+	if (g_cfg.video.write_color_buffers)
 	{
 		for (u8 index = 0; index < rsx::limits::color_buffers_count; index++)
 		{
@@ -1087,7 +1113,7 @@ void VKGSRender::copy_render_targets_to_dma_location()
 		}
 	}
 
-	if (g_cfg_rsx_write_depth_buffer)
+	if (g_cfg.video.write_depth_buffer)
 	{
 		if (m_depth_surface_info.pitch)
 		{
@@ -1192,7 +1218,7 @@ void VKGSRender::process_swap_request()
 	m_sampler_to_clean.clear();
 	m_framebuffer_to_clean.clear();
 
-	if (g_cfg_rsx_overlay)
+	if (g_cfg.video.overlay)
 	{
 		m_text_writer->reset_descriptors();
 	}
@@ -1204,6 +1230,8 @@ void VKGSRender::do_local_task()
 {
 	if (m_flush_commands)
 	{
+		std::lock_guard<std::mutex> lock(m_flush_queue_mutex);
+
 		//TODO: Determine if a hard sync is necessary
 		//Pipeline barriers later may do a better job synchronizing than wholly stalling the pipeline
 		flush_command_queue();
@@ -1609,7 +1637,7 @@ void VKGSRender::prepare_rtts()
 			m_depth_surface_info.pitch = 0;
 	}
 
-	if (g_cfg_rsx_write_color_buffers)
+	if (g_cfg.video.write_color_buffers)
 	{
 		for (u8 index : draw_buffers)
 		{
@@ -1621,7 +1649,7 @@ void VKGSRender::prepare_rtts()
 		}
 	}
 
-	if (g_cfg_rsx_write_depth_buffer)
+	if (g_cfg.video.write_depth_buffer)
 	{
 		if (m_depth_surface_info.address && m_depth_surface_info.pitch)
 		{
@@ -1717,7 +1745,7 @@ void VKGSRender::flip(int buffer)
 
 		std::unique_ptr<vk::framebuffer> direct_fbo;
 		std::vector<std::unique_ptr<vk::image_view>> swap_image_view;
-		if (g_cfg_rsx_overlay)
+		if (g_cfg.video.overlay)
 		{
 			//Change the image layout whilst setting up a dependency on waiting for the blit op to finish before we start writing
 			auto subres = vk::get_image_subresource_range(0, 0, 1, 1, VK_IMAGE_ASPECT_COLOR_BIT);

@@ -8,7 +8,7 @@
 #include <memory>
 #include <unordered_map>
 
-#include "Utilities/Config.h"
+#include "Emu/System.h"
 #include "VulkanAPI.h"
 #include "../GCM.h"
 #include "../Common/TextureUtils.h"
@@ -22,8 +22,6 @@
 #define SCALE_OFFSET_BIND_SLOT 0
 #define TEXTURES_FIRST_BIND_SLOT 19
 #define VERTEX_TEXTURES_FIRST_BIND_SLOT 35 //19+16
-
-extern cfg::bool_entry g_cfg_rsx_debug_output;
 
 namespace rsx
 {
@@ -184,7 +182,7 @@ namespace vk
 
 			std::vector<const char *> layers;
 
-			if (g_cfg_rsx_debug_output)
+			if (g_cfg.video.debug_output)
 				layers.push_back("VK_LAYER_LUNARG_standard_validation");
 
 			VkDeviceCreateInfo device = {};
@@ -1021,11 +1019,16 @@ namespace vk
 		PFN_vkCreateDebugReportCallbackEXT createDebugReportCallback = nullptr;
 		VkDebugReportCallbackEXT m_debugger = nullptr;
 
+		bool loader_exists = false;
+
 	public:
 
 		context()
 		{
 			m_instance = nullptr;
+
+			//Check that some critical entry-points have been loaded into memory indicating prescence of a loader
+			loader_exists = (vkCreateInstance != nullptr);
 		}
 
 		~context()
@@ -1068,8 +1071,10 @@ namespace vk
 			CHECK_RESULT(createDebugReportCallback(m_instance, &dbgCreateInfo, NULL, &m_debugger));
 		}
 
-		uint32_t createInstance(const char *app_name)
+		uint32_t createInstance(const char *app_name, bool fast = false)
 		{
+			if (!loader_exists) return 0;
+
 			//Initialize a vulkan instance
 			VkApplicationInfo app = {};
 
@@ -1090,7 +1095,7 @@ namespace vk
 
 			std::vector<const char *> layers;
 
-			if (g_cfg_rsx_debug_output)
+			if (!fast && g_cfg.video.debug_output)
 				layers.push_back("VK_LAYER_LUNARG_standard_validation");
 
 			VkInstanceCreateInfo instance_info = {};
@@ -1098,11 +1103,12 @@ namespace vk
 			instance_info.pApplicationInfo = &app;
 			instance_info.enabledLayerCount = static_cast<uint32_t>(layers.size());
 			instance_info.ppEnabledLayerNames = layers.data();
-			instance_info.enabledExtensionCount = 3;
-			instance_info.ppEnabledExtensionNames = requested_extensions;
+			instance_info.enabledExtensionCount = fast? 0: 3;
+			instance_info.ppEnabledExtensionNames = fast? nullptr: requested_extensions;
 
 			VkInstance instance;
-			CHECK_RESULT(vkCreateInstance(&instance_info, nullptr, &instance));
+			if (vkCreateInstance(&instance_info, nullptr, &instance) != VK_SUCCESS)
+				return 0;
 
 			m_vk_instances.push_back(instance);
 			return (u32)m_vk_instances.size();
@@ -1139,6 +1145,9 @@ namespace vk
 
 		std::vector<physical_device>& enumerateDevices()
 		{
+			if (!loader_exists)
+				return gpus;
+
 			uint32_t num_gpus;
 			CHECK_RESULT(vkEnumeratePhysicalDevices(m_instance, &num_gpus, nullptr));
 
