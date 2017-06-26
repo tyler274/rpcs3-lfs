@@ -754,12 +754,18 @@ bool VKGSRender::on_access_violation(u32 address, bool is_writing)
 					}
 
 					//This is awful!
-					while (m_flush_commands) _mm_pause();
+					while (m_flush_commands)
+					{
+						_mm_lfence();
+						_mm_pause();
+					}
 
 					std::lock_guard<std::mutex> lock(m_secondary_cb_guard);
 					bool status = m_texture_cache.flush_address(address, *m_device, m_secondary_command_buffer, m_memory_type_mapping, m_swap_chain->get_present_queue());
 
 					m_queued_threads--;
+					_mm_sfence();
+
 					return status;
 				}
 				else
@@ -941,6 +947,12 @@ void VKGSRender::end()
 	}
 
 	close_render_pass();	//Texture upload stuff conflicts active RPs	
+
+	std::chrono::time_point<steady_clock> vertex_start0 = steady_clock::now();
+	auto upload_info = upload_vertex_data();
+	std::chrono::time_point<steady_clock> vertex_end0 = steady_clock::now();
+	m_vertex_upload_time += std::chrono::duration_cast<std::chrono::microseconds>(vertex_end0 - vertex_start0).count();
+
 	std::chrono::time_point<steady_clock> textures_start = steady_clock::now();
 
 	for (int i = 0; i < rsx::limits::fragment_textures_count; ++i)
@@ -1035,11 +1047,6 @@ void VKGSRender::end()
 	//Only textures are synchronized tightly with the GPU and they have been read back above
 	vk::enter_uninterruptible();
 
-	auto upload_info = upload_vertex_data();
-
-	std::chrono::time_point<steady_clock> vertex_end = steady_clock::now();
-	m_vertex_upload_time += std::chrono::duration_cast<std::chrono::microseconds>(vertex_end - textures_end).count();
-
 	begin_render_pass();
 	vkCmdBindPipeline(*m_current_command_buffer, VK_PIPELINE_BIND_POINT_GRAPHICS, m_program->pipeline);
 	vkCmdBindDescriptorSets(*m_current_command_buffer, VK_PIPELINE_BIND_POINT_GRAPHICS, pipeline_layout, 0, 1, &descriptor_sets, 0, nullptr);
@@ -1061,6 +1068,15 @@ void VKGSRender::end()
 	}
 
 	std::optional<std::tuple<VkDeviceSize, VkIndexType> > index_info = std::get<2>(upload_info);
+
+	if (m_attrib_ring_info.mapped)
+	{
+		wait_for_vertex_upload_task();
+		m_attrib_ring_info.unmap();
+	}
+
+	std::chrono::time_point<steady_clock> vertex_end = steady_clock::now();
+	m_vertex_upload_time += std::chrono::duration_cast<std::chrono::microseconds>(vertex_end - textures_end).count();
 
 	if (!index_info)
 	{
@@ -1395,7 +1411,11 @@ void VKGSRender::do_local_task()
 		flush_command_queue();
 
 		m_flush_commands = false;
-		while (m_queued_threads) _mm_pause();
+		while (m_queued_threads)
+		{
+			_mm_lfence();
+			_mm_pause();
+		}
 	}
 }
 

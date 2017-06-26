@@ -477,7 +477,7 @@ namespace
 			{
 				const auto &vbo = vertex_buffers[i];
 
-				if (vbo.which() == 0 && vertex_count > 4)
+				if (vbo.which() == 0 && vertex_count > 128 && vertex_buffers.size() > 2 && rsxthr->vertex_upload_task_ready())
 				{
 					//vertex array buffer. We can thread this thing heavily
 					const auto& v = vbo.get<rsx::vertex_array_buffer>();
@@ -509,7 +509,7 @@ namespace
 					u8 available_jobs[2] = {};
 					u32 allocated_block[2] = {};
 
-					u32 last_offset = memory_allocations[0];
+					size_t last_offset = memory_allocations[0];
 					u8 current_index = 0;
 
 					for (int n = 0; n < memory_allocations.size(); ++n)
@@ -529,6 +529,12 @@ namespace
 					{
 						if (available_jobs[task])
 						{
+							if (m_attrib_ring_info.mapped)
+							{
+								rsxthr->wait_for_vertex_upload_task();
+								m_attrib_ring_info.unmap();
+							}
+
 							size_t space_remaining = allocated_block[task];
 							size_t offset_base = memory_allocations[n];
 
@@ -550,8 +556,6 @@ namespace
 							}
 
 							rsxthr->start_vertex_upload_task(vertex_count);
-							rsxthr->wait_for_vertex_upload_task();
-							m_attrib_ring_info.unmap();
 						}
 					}
 				}

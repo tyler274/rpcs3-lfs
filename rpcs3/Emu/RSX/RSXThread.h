@@ -247,8 +247,8 @@ namespace rsx
 		struct upload_stream_task
 		{
 			std::vector<upload_stream_packet> packets;
-			std::atomic<int> remaining_packets;
-			std::atomic<int> ready_threads;
+			std::atomic<int> remaining_packets = { 0 };
+			std::atomic<int> ready_threads = { 0 };
 			std::atomic<u32> vertex_count;
 
 			std::vector<std::shared_ptr<thread_ctrl>> processing_threads;
@@ -260,6 +260,7 @@ namespace rsx
 			std::function<void(void *, rsx::vertex_base_type, u8, u32)> callback);
 		void start_vertex_upload_task(u32 vertex_count);
 		void wait_for_vertex_upload_task();
+		bool vertex_upload_task_ready();
 
 	private:
 		std::mutex m_mtx_task;

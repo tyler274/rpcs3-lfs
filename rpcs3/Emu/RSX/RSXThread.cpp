@@ -309,6 +309,9 @@ namespace rsx
 
 	bool thread::is_probable_instanced_draw()
 	{
+		if (!g_cfg.video.batch_instanced_geometry)
+			return false;
+
 		//If the array registers have not been touched, the index array has also not been touched via notify or via register set, its likely an instanced draw
 		//gcm lib will set the registers once and then call the same draw command over and over with different transform params to achieve this
 		if (m_index_buffer_changed || m_vertex_attribs_changed)
@@ -1134,8 +1137,7 @@ namespace rsx
 	{
 		if (m_vertex_streaming_task.processing_threads.size() == 0)
 		{
-			//TODO: Make configurable
-			constexpr u32 streaming_thread_count = 2;
+			const u32 streaming_thread_count = (u32)g_cfg.video.vertex_upload_threads;
 			m_vertex_streaming_task.processing_threads.resize(streaming_thread_count);
 
 			for (u32 n = 0; n < streaming_thread_count; ++n)
@@ -1170,26 +1172,36 @@ namespace rsx
 								if (packet.post_upload_func)
 									packet.post_upload_func(packet.dst_span.data(), packet.type, (u8)packet.vector_width, task.vertex_count);
 
+								_mm_sfence();
 								task.remaining_packets--;
 								current_job += step;
 							}
 
-							while (task.remaining_packets > 0)
-								busy_wait();
+							_mm_mfence();
+
+							while (task.remaining_packets > 0 && !Emu.IsStopped())
+							{
+								_mm_lfence();
+								std::this_thread::sleep_for(0us);
+							}
 							
+							_mm_sfence();
 							task.ready_threads++;
 						}
 						else
-							std::this_thread::sleep_for(100us);
+							std::this_thread::sleep_for(0us);
 							//thread_ctrl::wait();
-							;
+							//busy_wait();
 					}
 				});
 			}
 		}
 
-		while (m_vertex_streaming_task.ready_threads != 0)
+		while (m_vertex_streaming_task.ready_threads != 0 && !Emu.IsStopped())
+		{
+			_mm_lfence();
 			busy_wait();
+		}
 
 		m_vertex_streaming_task.vertex_count = vertex_count;
 		m_vertex_streaming_task.ready_threads = 0;
@@ -1198,9 +1210,20 @@ namespace rsx
 
 	void thread::wait_for_vertex_upload_task()
 	{
-		while (m_vertex_streaming_task.remaining_packets > 0)
+		while (m_vertex_streaming_task.remaining_packets > 0 && !Emu.IsStopped())
+		{
+			_mm_lfence();
 			busy_wait();
+		}
 
 		m_vertex_streaming_task.packets.resize(0);
+	}
+
+	bool thread::vertex_upload_task_ready()
+	{
+		if (g_cfg.video.vertex_upload_threads < 2)
+			return false;
+
+		return (m_vertex_streaming_task.remaining_packets == 0 && m_vertex_streaming_task.ready_threads == 0);
 	}
 }
