@@ -501,7 +501,7 @@ void SPUThread::process_mfc_cmd()
 			// TODO: investigate lost notifications
 			//busy_wait();
 			//_mm_lfence();
-			std::this_thread::sleep_for(100us);
+			std::this_thread::sleep_for(0us);
 			_mm_lfence();
 		}
 	};
@@ -900,7 +900,7 @@ bool SPUThread::get_ch_value(u32 ch, u32& out)
 			if (ctr > 10000)
 			{
 				ctr = 0;
-				std::this_thread::sleep_for(500us);
+				std::this_thread::sleep_for(0us);
 			}
 			else
 			{
