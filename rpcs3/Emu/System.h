@@ -314,7 +314,7 @@ struct cfg_root : cfg::node
 		cfg::_bool strict_rendering_mode{this, "Strict Rendering Mode"};
 
 		cfg::_bool batch_instanced_geometry{this, "Batch Instanced Geometry", false};
-		cfg::_int<1, 16> vertex_upload_threads{ this, "Vertex Upload Threads", 4 };
+		cfg::_int<1, 16> vertex_upload_threads{ this, "Vertex Upload Threads", 1 };
 
 		struct node_d3d12 : cfg::node
 		{
