@@ -1,5 +1,4 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#pragma once
 
 #ifdef _WIN32
 #include <QWinTaskbarProgress>
@@ -57,17 +56,17 @@ public:
 	void CreateThumbnailToolbar();
 	QIcon GetAppIcon();
 
-signals:
+Q_SIGNALS:
 	void RequestGlobalStylesheetChange(const QString& sheetFilePath);
 
-public slots:
+public Q_SLOTS:
 	void OnEmuStop();
 	void OnEmuRun();
 	void OnEmuResume();
 	void OnEmuPause();
 	void OnEmuReady();
 
-private slots:
+private Q_SLOTS:
 	void BootElf();
 	void BootGame();
 	void InstallPkg();
@@ -89,10 +88,22 @@ private:
 	void EnableMenus(bool enabled);
 	void keyPressEvent(QKeyEvent *keyEvent);
 
+	QAction* CreateRecentAction(const q_string_pair& entry, const uint& sc_idx);
+	void BootRecentAction(const QAction* act);
+	void AddRecentAction(const q_string_pair& entry);
+
+	q_pair_list m_rg_entries;
+	QMenu* m_bootRecentMenu;
+	QList<QAction*> m_recentGameActs;
+
 	QActionGroup* iconSizeActGroup;
+	QActionGroup* listModeActGroup;
+	QActionGroup* categoryVisibleActGroup;
 
 	QAction *bootElfAct;
 	QAction *bootGameAct;
+	QAction *clearRecentAct;
+	QAction *freezeRecentAct;
 	QAction *bootInstallPkgAct;
 	QAction *bootInstallPupAct;
 	QAction *sysPauseAct;
@@ -102,6 +113,7 @@ private:
 	QAction *confSettingsAct;
 	QAction *confPadAct;
 	QAction *confAutopauseManagerAct;
+	QAction *confVFSDialogAct;
 	QAction *confSavedataManagerAct;
 	QAction *toolsCgDisasmAct;
 	QAction *toolskernel_explorerAct;
@@ -115,15 +127,20 @@ private:
 	QAction *showGameListAct;
 	QAction *showControlsAct;
 	QAction *refreshGameListAct;
+	QAction *showGameListToolBarAct;
 	QAction* showCatHDDGameAct;
 	QAction* showCatDiscGameAct;
 	QAction* showCatHomeAct;
 	QAction* showCatAudioVideoAct;
 	QAction* showCatGameDataAct;
 	QAction* showCatUnknownAct;
+	QAction* showCatOtherAct;
+	QAction* setIconSizeTinyAct;
 	QAction* setIconSizeSmallAct;
 	QAction* setIconSizeMediumAct;
 	QAction* setIconSizeLargeAct;
+	QAction* setlistModeListAct;
+	QAction* setlistModeGridAct;
 	QAction *aboutAct;
 	QAction *aboutQtAct;
 
@@ -133,5 +150,3 @@ private:
 	game_list_frame *gameListFrame;
 	std::shared_ptr<gui_settings> guiSettings;
 };
-
-#endif // MAINWINDOW_H

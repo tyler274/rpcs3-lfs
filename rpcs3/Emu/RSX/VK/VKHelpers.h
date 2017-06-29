@@ -8,6 +8,10 @@
 #include <memory>
 #include <unordered_map>
 
+#ifdef __linux__
+#include <X11/Xlib.h>
+#endif
+
 #include "Emu/System.h"
 #include "VulkanAPI.h"
 #include "../GCM.h"
@@ -52,6 +56,7 @@ namespace vk
 	class swap_chain_image;
 	class physical_device;
 	class command_buffer;
+	struct image;
 
 	vk::context *get_current_thread_ctx();
 	void set_current_thread_ctx(const vk::context &ctx);
@@ -69,6 +74,7 @@ namespace vk
 	void destroy_global_resources();
 
 	void change_image_layout(VkCommandBuffer cmd, VkImage image, VkImageLayout current_layout, VkImageLayout new_layout, VkImageSubresourceRange range);
+	void change_image_layout(VkCommandBuffer cmd, vk::image *image, VkImageLayout new_layout, VkImageSubresourceRange range);
 	void copy_image(VkCommandBuffer cmd, VkImage &src, VkImage &dst, VkImageLayout srcLayout, VkImageLayout dstLayout, u32 width, u32 height, u32 mipmaps, VkImageAspectFlagBits aspect);
 	void copy_scaled_image(VkCommandBuffer cmd, VkImage &src, VkImage &dst, VkImageLayout srcLayout, VkImageLayout dstLayout, u32 src_x_offset, u32 src_y_offset, u32 src_width, u32 src_height, u32 dst_x_offset, u32 dst_y_offset, u32 dst_width, u32 dst_height, u32 mipmaps, VkImageAspectFlagBits aspect);
 
@@ -185,6 +191,16 @@ namespace vk
 			if (g_cfg.video.debug_output)
 				layers.push_back("VK_LAYER_LUNARG_standard_validation");
 
+			//Enable hardware features manually
+			//Currently we require:
+			//1. Anisotropic sampling
+			//2. DXT support
+			VkPhysicalDeviceFeatures available_features;
+			vkGetPhysicalDeviceFeatures(*pgpu, &available_features);
+
+			available_features.samplerAnisotropy = VK_TRUE;
+			available_features.textureCompressionBC = VK_TRUE;
+
 			VkDeviceCreateInfo device = {};
 			device.sType = VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO;
 			device.pNext = NULL;
@@ -194,7 +210,7 @@ namespace vk
 			device.ppEnabledLayerNames = layers.data();
 			device.enabledExtensionCount = 1;
 			device.ppEnabledExtensionNames = requested_extensions;
-			device.pEnabledFeatures = nullptr;
+			device.pEnabledFeatures = &available_features;
 
 			CHECK_RESULT(vkCreateDevice(*pgpu, &device, nullptr, &dev));
 		}
@@ -344,7 +360,8 @@ namespace vk
 	struct image
 	{
 		VkImage value;
-		VkComponentMapping native_layout = {VK_COMPONENT_SWIZZLE_R, VK_COMPONENT_SWIZZLE_G, VK_COMPONENT_SWIZZLE_B, VK_COMPONENT_SWIZZLE_A};
+		VkComponentMapping native_component_map = {VK_COMPONENT_SWIZZLE_R, VK_COMPONENT_SWIZZLE_G, VK_COMPONENT_SWIZZLE_B, VK_COMPONENT_SWIZZLE_A};
+		VkImageLayout current_layout = VK_IMAGE_LAYOUT_UNDEFINED;
 		VkImageCreateInfo info = {};
 		std::shared_ptr<vk::memory_block> memory;
 
@@ -401,6 +418,21 @@ namespace vk
 
 		image(const image&) = delete;
 		image(image&&) = delete;
+
+		u32 width() const
+		{
+			return info.extent.width;
+		}
+
+		u32 height() const
+		{
+			return info.extent.height;
+		}
+
+		u32 depth() const
+		{
+			return info.extent.depth;
+		}
 
 	private:
 		VkDevice m_device;
@@ -578,7 +610,8 @@ namespace vk
 
 		sampler(VkDevice dev, VkSamplerAddressMode clamp_u, VkSamplerAddressMode clamp_v, VkSamplerAddressMode clamp_w,
 			bool unnormalized_coordinates, float mipLodBias, float max_anisotropy, float min_lod, float max_lod,
-			VkFilter min_filter, VkFilter mag_filter, VkSamplerMipmapMode mipmap_mode, VkBorderColor border_color)
+			VkFilter min_filter, VkFilter mag_filter, VkSamplerMipmapMode mipmap_mode, VkBorderColor border_color,
+			VkBool32 depth_compare = false, VkCompareOp depth_compare_mode = VK_COMPARE_OP_NEVER)
 			: m_device(dev)
 		{
 			VkSamplerCreateInfo info = {};
@@ -587,7 +620,7 @@ namespace vk
 			info.addressModeV = clamp_v;
 			info.addressModeW = clamp_w;
 			info.anisotropyEnable = VK_TRUE;
-			info.compareEnable = VK_FALSE;
+			info.compareEnable = depth_compare;
 			info.unnormalizedCoordinates = unnormalized_coordinates;
 			info.mipLodBias = mipLodBias;
 			info.maxAnisotropy = max_anisotropy;
@@ -596,7 +629,7 @@ namespace vk
 			info.magFilter = mag_filter;
 			info.minFilter = min_filter;
 			info.mipmapMode = mipmap_mode;
-			info.compareOp = VK_COMPARE_OP_NEVER;
+			info.compareOp = depth_compare_mode;
 			info.borderColor = border_color;
 
 			CHECK_RESULT(vkCreateSampler(m_device, &info, nullptr, &value));
@@ -799,15 +832,9 @@ namespace vk
 		void init_swapchain(u32 width, u32 height)
 		{
 			VkSwapchainKHR old_swapchain = m_vk_swapchain;
-
-			uint32_t num_modes;
 			vk::physical_device& gpu = const_cast<vk::physical_device&>(dev.gpu());
-			CHECK_RESULT(vkGetPhysicalDeviceSurfacePresentModesKHR(gpu, m_surface, &num_modes, NULL));
-
-			std::vector<VkPresentModeKHR> present_mode_descriptors(num_modes);
-			CHECK_RESULT(vkGetPhysicalDeviceSurfacePresentModesKHR(gpu, m_surface, &num_modes, present_mode_descriptors.data()));
-
-			VkSurfaceCapabilitiesKHR surface_descriptors;
+			
+			VkSurfaceCapabilitiesKHR surface_descriptors = {};
 			CHECK_RESULT(vkGetPhysicalDeviceSurfaceCapabilitiesKHR(gpu, m_surface, &surface_descriptors));
 
 			VkExtent2D swapchainExtent;
@@ -1058,6 +1085,8 @@ namespace vk
 		
 		void enable_debugging()
 		{
+			if (!g_cfg.video.debug_output) return;
+			 
 			PFN_vkDebugReportCallbackEXT callback = vk::dbgFunc;
 
 			createDebugReportCallback = (PFN_vkCreateDebugReportCallbackEXT)vkGetInstanceProcAddr(m_instance, "vkCreateDebugReportCallbackEXT");
@@ -1089,7 +1118,11 @@ namespace vk
 			const char *requested_extensions[] =
 			{
 				"VK_KHR_surface",
+#ifdef _WIN32
 				"VK_KHR_win32_surface",
+#else
+				"VK_KHR_xlib_surface",
+#endif
 				"VK_EXT_debug_report",
 			};
 
@@ -1149,7 +1182,9 @@ namespace vk
 				return gpus;
 
 			uint32_t num_gpus;
-			CHECK_RESULT(vkEnumeratePhysicalDevices(m_instance, &num_gpus, nullptr));
+			// This may fail on unsupported drivers, so just assume no devices
+			if (vkEnumeratePhysicalDevices(m_instance, &num_gpus, nullptr) != VK_SUCCESS)
+				return gpus;
 
 			if (gpus.size() != num_gpus)
 			{
@@ -1166,6 +1201,7 @@ namespace vk
 		}
 
 #ifdef _WIN32
+		
 		vk::swap_chain* createSwapChain(HINSTANCE hInstance, HWND hWnd, vk::physical_device &dev)
 		{
 			VkWin32SurfaceCreateInfoKHR createInfo = {};
@@ -1175,6 +1211,18 @@ namespace vk
 
 			VkSurfaceKHR surface;
 			CHECK_RESULT(vkCreateWin32SurfaceKHR(m_instance, &createInfo, NULL, &surface));
+#elif __linux__
+		
+		vk::swap_chain* createSwapChain(Display *display, Window window, vk::physical_device &dev)
+		{
+			VkXlibSurfaceCreateInfoKHR createInfo = {};
+			createInfo.sType = VK_STRUCTURE_TYPE_XLIB_SURFACE_CREATE_INFO_KHR;
+			createInfo.dpy = display;
+			createInfo.window = window;
+			
+			VkSurfaceKHR surface;
+			CHECK_RESULT(vkCreateXlibSurfaceKHR(m_instance, &createInfo, nullptr, &surface));
+#endif
 
 			uint32_t device_queues = dev.get_queue_count();
 			std::vector<VkBool32> supportsPresent(device_queues);
@@ -1251,8 +1299,6 @@ namespace vk
 
 			return new swap_chain(dev, presentQueueNodeIndex, graphicsQueueNodeIndex, format, surface, color_space);
 		}
-#endif	//if _WIN32
-
 	};
 
 	class descriptor_pool

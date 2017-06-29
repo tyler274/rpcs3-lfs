@@ -240,7 +240,7 @@ namespace
 		void* buf = m_index_buffer_ring_info.map(offset_in_index_buffer, upload_size);
 
 		write_index_array_for_non_indexed_non_native_primitive_to_buffer(
-			reinterpret_cast<char*>(buf), clause.primitive, 0, vertex_count);
+			reinterpret_cast<char*>(buf), clause.primitive, vertex_count);
 
 		m_index_buffer_ring_info.unmap();
 		return std::make_tuple(
@@ -287,7 +287,7 @@ namespace
 			size_t data_size = rsx::get_vertex_type_size_on_host(vertex_register.type, vertex_register.attribute_size);
 			const VkFormat format = vk::get_suitable_vk_format(vertex_register.type, vertex_register.attribute_size);
 
-			u32 offset_in_attrib_buffer = 0;
+			size_t offset_in_attrib_buffer = 0;
 
 			if (vk::requires_component_expansion(vertex_register.type, vertex_register.attribute_size))
 			{
@@ -316,7 +316,7 @@ namespace
 
 		void operator()(const rsx::empty_vertex_array& vbo)
 		{
-			u32 offset_in_attrib_buffer = m_attrib_ring_info.alloc<256>(32);
+			size_t offset_in_attrib_buffer = m_attrib_ring_info.alloc<256>(32);
 			void *dst = m_attrib_ring_info.map(offset_in_attrib_buffer, 32);
 			memset(dst, 0, 32);
 			m_attrib_ring_info.unmap();
@@ -494,7 +494,7 @@ namespace
 				const VkFormat format =
 					vk::get_suitable_vk_format(vertex_info.type(), vertex_info.size());
 
-				u32 offset_in_attrib_buffer = m_attrib_ring_info.alloc<256>(data_size);
+				size_t offset_in_attrib_buffer = m_attrib_ring_info.alloc<256>(data_size);
 				u8* src = reinterpret_cast<u8*>(
 					rsx::method_registers.current_draw_clause.inline_vertex_array.data());
 				u8* dst =
@@ -551,6 +551,6 @@ VKGSRender::upload_vertex_data()
 {
 	draw_command_visitor visitor(*m_device, m_index_buffer_ring_info, m_attrib_ring_info, m_program,
 		descriptor_sets, m_buffer_view_to_clean,
-		[this](const auto& state, const auto& range) { return get_vertex_buffers(state, range); });
+		[this](const auto& state, const auto& range) { return this->get_vertex_buffers(state, range); });
 	return std::apply_visitor(visitor, get_draw_command(rsx::method_registers));
 }

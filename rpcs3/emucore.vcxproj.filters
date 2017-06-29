@@ -632,6 +632,9 @@
     <ClCompile Include="Emu\Cell\Modules\sys_prx_.cpp">
       <Filter>Emu\Cell\Modules</Filter>
     </ClCompile>
+    <ClCompile Include="Emu\Cell\Modules\sys_rsxaudio_.cpp">
+      <Filter>Emu\Cell\Modules</Filter>
+    </ClCompile>
     <ClCompile Include="Emu\Cell\Modules\sys_spinlock.cpp">
       <Filter>Emu\Cell\Modules</Filter>
     </ClCompile>
@@ -862,9 +865,6 @@
     </ClCompile>
     <ClCompile Include="Emu\PSP2\Modules\sceVoiceQoS.cpp">
       <Filter>Emu\PSP2\Modules</Filter>
-    </ClCompile>
-    <ClCompile Include="Emu\RSX\rsx_cache.cpp">
-      <Filter>Emu\GPU\RSX</Filter>
     </ClCompile>
     <ClCompile Include="..\Utilities\dynamic_library.cpp">
       <Filter>Utilities</Filter>

@@ -4,6 +4,18 @@
 #include "Emu/System.h"
 #include "Utilities/Config.h"
 
+#ifdef _MSC_VER
+#include <Windows.h>
+#undef GetHwnd
+#include <d3d12.h>
+#include <wrl/client.h>
+#include <dxgi1_4.h>
+#endif
+
+#if defined(_WIN32) || defined(__linux__)
+#include "Emu/RSX/VK/VKHelpers.h"
+#endif
+
 extern std::string g_cfg_defaults; //! Default settings grabbed from Utilities/Config.h
 
 inline std::string sstr(const QString& _in) { return _in.toUtf8().toStdString(); }
@@ -103,23 +115,79 @@ static QStringList getOptions(cfg_location location)
 	return values;
 }
 
+Render_Creator::Render_Creator()
+{
+	// check for dx12 adapters
+#ifdef _MSC_VER
+	HMODULE D3D12Module = LoadLibrary(L"d3d12.dll");
+
+	if (D3D12Module != NULL)
+	{
+		Microsoft::WRL::ComPtr<IDXGIAdapter1> pAdapter;
+		Microsoft::WRL::ComPtr<IDXGIFactory1> dxgi_factory;
+		if (SUCCEEDED(CreateDXGIFactory1(IID_PPV_ARGS(&dxgi_factory))))
+		{
+			PFN_D3D12_CREATE_DEVICE wrapD3D12CreateDevice = (PFN_D3D12_CREATE_DEVICE)GetProcAddress(D3D12Module, "D3D12CreateDevice");
+			if (wrapD3D12CreateDevice != nullptr)
+			{
+				for (UINT adapterIndex = 0; DXGI_ERROR_NOT_FOUND != dxgi_factory->EnumAdapters1(adapterIndex, pAdapter.ReleaseAndGetAddressOf()); ++adapterIndex)
+				{
+					if (SUCCEEDED(wrapD3D12CreateDevice(pAdapter.Get(), D3D_FEATURE_LEVEL_11_0, _uuidof(ID3D12Device), nullptr)))
+					{
+						//A device with D3D12 support found. Init data
+						supportsD3D12 = true;
+
+						DXGI_ADAPTER_DESC desc;
+						if (SUCCEEDED(pAdapter->GetDesc(&desc)))
+							D3D12Adapters.append(QString::fromWCharArray(desc.Description));
+					}
+				}
+				
+			}
+		}
+	}
+#endif
+
+#if defined(WIN32) || defined(__linux__)
+	// check for vulkan adapters
+	vk::context device_enum_context;
+	u32 instance_handle = device_enum_context.createInstance("RPCS3", true);
+
+	if (instance_handle > 0)
+	{
+		device_enum_context.makeCurrentInstance(instance_handle);
+		std::vector<vk::physical_device>& gpus = device_enum_context.enumerateDevices();
+
+		if (gpus.size() > 0)
+		{
+			//A device with vulkan support found. Init data
+			supportsVulkan = true;
+
+			for (auto& gpu : gpus)
+			{
+				vulkanAdapters.append(qstr(gpu.name()));
+			}
+		}
+	}
+#endif
+}
+
 emu_settings::emu_settings(const std::string& path) : QObject()
 {
-	currentSettings = YAML::Load(g_cfg_defaults);
-
 	// Create config path if necessary
 	fs::create_path(fs::get_config_dir() + path);
 
-	// Incrementally load config.yml
-	config = fs::file(fs::get_config_dir() + path + "/config.yml", fs::read + fs::write + fs::create);
+	// Load default config
+	currentSettings = YAML::Load(g_cfg_defaults);
 
-	if (config.size() == 0 && !path.empty()) // First time
+	// Add global config
+	config = fs::file(fs::get_config_dir() + "/config.yml", fs::read + fs::write + fs::create);
+	currentSettings += YAML::Load(config.to_string());
+
+	// Add game config
+	if (!path.empty())
 	{
-		config = fs::file(fs::get_config_dir() + "/config.yml", fs::read + fs::write + fs::create);
-		currentSettings += YAML::Load(config.to_string());
-	}
-	else
-	{
+		config = fs::file(fs::get_config_dir() + path + "/config.yml", fs::read + fs::write + fs::create);
 		currentSettings += YAML::Load(config.to_string());
 	}
 }
@@ -210,5 +278,5 @@ std::string emu_settings::GetSetting(SettingsType type) const
 
 void emu_settings::SetSetting(SettingsType type, const std::string& val)
 {
-	cfg_adapter::get_node(currentSettings, SettingsLoc[type])= val;
+	cfg_adapter::get_node(currentSettings, SettingsLoc[type]) = val;
 }

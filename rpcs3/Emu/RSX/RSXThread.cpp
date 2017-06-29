@@ -27,51 +27,7 @@ namespace rsx
 {
 	std::function<bool(u32 addr, bool is_writing)> g_access_violation_handler;
 
-	void old_shaders_cache::shaders_cache::load(const std::string &path, shader_language lang)
-	{
-		const std::string lang_name(lang == shader_language::glsl ? "glsl" : "hlsl");
-
-		auto extract_hash = [](const std::string &string)
-		{
-			return std::stoull(string.substr(0, string.find('.')).c_str(), 0, 16);
-		};
-
-		for (const auto& entry : fs::dir(path))
-		{
-			if (entry.name == "." || entry.name == "..")
-				continue;
-
-			u64 hash;
-
-			try
-			{
-				hash = extract_hash(entry.name);
-			}
-			catch (...)
-			{
-				continue;
-			}
-
-			if (fmt::match(entry.name, "*.fs." + lang_name))
-			{
-				fs::file file{ path + entry.name };
-				decompiled_fragment_shaders.insert(hash, { file.to_string() });
-				continue;
-			}
-
-			if (fmt::match(entry.name, "*.vs." + lang_name))
-			{
-				fs::file file{ path + entry.name };
-				decompiled_vertex_shaders.insert(hash, { file.to_string() });
-				continue;
-			}
-		}
-	}
-
-	void old_shaders_cache::shaders_cache::load(shader_language lang)
-	{
-		load(Emu.GetCachePath(), lang);
-	}
+	//TODO: Restore a working shaders cache
 
 	u32 get_address(u32 offset, u32 location)
 	{
@@ -317,7 +273,7 @@ namespace rsx
 
 	void thread::begin()
 	{
-		rsx::method_registers.current_draw_clause.inline_vertex_array.clear();
+		rsx::method_registers.current_draw_clause.inline_vertex_array.resize(0);
 		in_begin_end = true;
 	}
 
@@ -348,7 +304,7 @@ namespace rsx
 
 	u32 thread::get_push_buffer_index_count() const
 	{
-		return element_push_buffer.size();
+		return (u32)element_push_buffer.size();
 	}
 
 	void thread::end()
@@ -550,7 +506,7 @@ namespace rsx
 		return "rsx::thread";
 	}
 
-	void thread::fill_scale_offset_data(void *buffer, bool flip_y, bool symmetrical_z) const
+	void thread::fill_scale_offset_data(void *buffer, bool flip_y) const
 	{
 		int clip_w = rsx::method_registers.surface_clip_width();
 		int clip_h = rsx::method_registers.surface_clip_height();
@@ -567,8 +523,6 @@ namespace rsx
 
 		float scale_z = rsx::method_registers.viewport_scale_z();
 		float offset_z = rsx::method_registers.viewport_offset_z();
-		if (symmetrical_z) offset_z -= .5;
-
 		float one = 1.f;
 
 		stream_vector(buffer, (u32&)scale_x, 0, 0, (u32&)offset_x);
@@ -719,8 +673,9 @@ namespace rsx
 		}
 		u32 first = std::get<0>(draw_indexed_clause.front());
 		u32 count = std::get<0>(draw_indexed_clause.back()) + std::get<1>(draw_indexed_clause.back()) - first;
+
 		const gsl::byte* ptr = static_cast<const gsl::byte*>(vm::base(address));
-		return{ ptr, count * type_size };
+		return{ ptr + first * type_size, count * type_size };
 	}
 
 	gsl::span<const gsl::byte> thread::get_raw_vertex_buffer(const rsx::data_array_format_info& vertex_array_info, u32 base_offset, const std::vector<std::pair<u32, u32>>& vertex_ranges) const
@@ -867,13 +822,9 @@ namespace rsx
 			case rsx::vertex_base_type::s32k:
 			case rsx::vertex_base_type::ub256:
 				return true;
-			case rsx::vertex_base_type::f:
-			case rsx::vertex_base_type::cmp:
-			case rsx::vertex_base_type::sf:
-			case rsx::vertex_base_type::s1:
-			case rsx::vertex_base_type::ub:
-				return false;
 			}
+
+			return false;
 		}
 	}
 
@@ -914,6 +865,7 @@ namespace rsx
 		RSXVertexProgram result = {};
 		const u32 transform_program_start = rsx::method_registers.transform_program_start();
 		result.data.reserve((512 - transform_program_start) * 4);
+		result.rsx_vertex_inputs.reserve(rsx::limits::vertex_count);
 
 		for (int i = transform_program_start; i < 512; ++i)
 		{
@@ -930,7 +882,7 @@ namespace rsx
 
 		const u32 input_mask = rsx::method_registers.vertex_attrib_input_mask();
 		const u32 modulo_mask = rsx::method_registers.frequency_divider_operation_mask();
-		result.rsx_vertex_inputs.clear();
+
 		for (u8 index = 0; index < rsx::limits::vertex_count; ++index)
 		{
 			bool enabled = !!(input_mask & (1 << index));
@@ -990,7 +942,7 @@ namespace rsx
 		result.pixel_center_mode = rsx::method_registers.shader_window_pixel();
 		result.height = rsx::method_registers.shader_window_height();
 		result.redirected_textures = 0;
-
+		result.shadow_textures = 0;
 
 		std::array<texture_dimension_extended, 16> texture_dimensions;
 		for (u32 i = 0; i < rsx::limits::fragment_textures_count; ++i)
@@ -1033,111 +985,17 @@ namespace rsx
 					{
 						u32 format = raw_format & ~(CELL_GCM_TEXTURE_LN | CELL_GCM_TEXTURE_UN);
 						if (format == CELL_GCM_TEXTURE_A8R8G8B8 || format == CELL_GCM_TEXTURE_D8R8G8B8)
-						{
 							result.redirected_textures |= (1 << i);
-						}
+						else if (format == CELL_GCM_TEXTURE_DEPTH16 || format == CELL_GCM_TEXTURE_DEPTH24_D8)
+							result.shadow_textures |= (1 << i);
+						else
+							LOG_ERROR(RSX, "Depth texture bound to pipeline with unexpected format 0x%X", format);
 					}
 				}
 			}
 		}
 
 		result.set_texture_dimension(texture_dimensions);
-
-		return result;
-	}
-
-	raw_program thread::get_raw_program() const
-	{
-		raw_program result{};
-
-		u32 fp_info = rsx::method_registers.shader_program_address();
-
-		result.state.input_attributes = rsx::method_registers.vertex_attrib_input_mask();
-		result.state.output_attributes = rsx::method_registers.vertex_attrib_output_mask();
-		result.state.ctrl = rsx::method_registers.shader_control();
-		result.state.divider_op = rsx::method_registers.frequency_divider_operation_mask();
-		result.state.alpha_func = (u32)rsx::method_registers.alpha_func();
-		result.state.fog_mode = (u32)rsx::method_registers.fog_equation();
-		result.state.is_int = 0;
-
-		for (u8 index = 0; index < rsx::limits::vertex_count; ++index)
-		{
-			bool is_int = false;
-
-			if (rsx::method_registers.vertex_arrays_info[index].size() > 0)
-			{
-				is_int                        = is_int_type(rsx::method_registers.vertex_arrays_info[index].type());
-				result.state.frequency[index] = rsx::method_registers.vertex_arrays_info[index].frequency();
-			}
-			else if (rsx::method_registers.register_vertex_info[index].size > 0)
-			{
-				is_int = is_int_type(rsx::method_registers.register_vertex_info[index].type);
-				result.state.frequency[index] = rsx::method_registers.register_vertex_info[index].frequency;
-				result.state.divider_op |= (1 << index);
-			}
-			else
-			{
-				result.state.frequency[index] = 0;
-			}
-
-			if (is_int)
-			{
-				result.state.is_int |= 1 << index;
-			}
-		}
-
-		for (u8 index = 0; index < rsx::limits::fragment_textures_count; ++index)
-		{
-			if (!rsx::method_registers.fragment_textures[index].enabled())
-			{
-				result.state.textures_alpha_kill[index] = 0;
-				result.state.textures_zfunc[index] = 0;
-				result.state.textures[index] = rsx::texture_target::none;
-				continue;
-			}
-
-			result.state.textures_alpha_kill[index] = rsx::method_registers.fragment_textures[index].alpha_kill_enabled() ? 1 : 0;
-			result.state.textures_zfunc[index] = rsx::method_registers.fragment_textures[index].zfunc();
-
-			switch (rsx::method_registers.fragment_textures[index].get_extended_texture_dimension())
-			{
-			case rsx::texture_dimension_extended::texture_dimension_1d: result.state.textures[index] = rsx::texture_target::_1; break;
-			case rsx::texture_dimension_extended::texture_dimension_2d: result.state.textures[index] = rsx::texture_target::_2; break;
-			case rsx::texture_dimension_extended::texture_dimension_3d: result.state.textures[index] = rsx::texture_target::_3; break;
-			case rsx::texture_dimension_extended::texture_dimension_cubemap: result.state.textures[index] = rsx::texture_target::cube; break;
-
-			default:
-				result.state.textures[index] = rsx::texture_target::none;
-				break;
-			}
-		}
-
-		for (u8 index = 0; index < rsx::limits::vertex_textures_count; ++index)
-		{
-			if (!rsx::method_registers.fragment_textures[index].enabled())
-			{
-				result.state.vertex_textures[index] = rsx::texture_target::none;
-				continue;
-			}
-
-			switch (rsx::method_registers.fragment_textures[index].get_extended_texture_dimension())
-			{
-			case rsx::texture_dimension_extended::texture_dimension_1d: result.state.vertex_textures[index] = rsx::texture_target::_1; break;
-			case rsx::texture_dimension_extended::texture_dimension_2d: result.state.vertex_textures[index] = rsx::texture_target::_2; break;
-			case rsx::texture_dimension_extended::texture_dimension_3d: result.state.vertex_textures[index] = rsx::texture_target::_3; break;
-			case rsx::texture_dimension_extended::texture_dimension_cubemap: result.state.vertex_textures[index] = rsx::texture_target::cube; break;
-
-			default:
-				result.state.vertex_textures[index] = rsx::texture_target::none;
-				break;
-			}
-		}
-
-		result.vertex_shader.ucode_ptr = rsx::method_registers.transform_program.data();
-		result.vertex_shader.offset = rsx::method_registers.transform_program_start();
-
-		result.fragment_shader.ucode_ptr = vm::base(rsx::get_address(fp_info & ~0x3, (fp_info & 0x3) - 1));
-		result.fragment_shader.offset = 0;
 
 		return result;
 	}

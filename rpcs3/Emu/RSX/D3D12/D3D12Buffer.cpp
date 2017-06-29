@@ -87,7 +87,7 @@ void D3D12GSRender::upload_and_bind_scale_offset_matrix(size_t descriptorIndex)
 	// Scale offset buffer
 	// Separate constant buffer
 	void *mapped_buffer = m_buffer_data.map<void>(CD3DX12_RANGE(heap_offset, heap_offset + 512));
-	fill_scale_offset_data(mapped_buffer, true, false);
+	fill_scale_offset_data(mapped_buffer, true);
 	fill_user_clip_data((char*)mapped_buffer + 64);
 	fill_fragment_state_buffer((char *)mapped_buffer + 128, m_fragment_program);
 	m_buffer_data.unmap(CD3DX12_RANGE(heap_offset, heap_offset + 512));
@@ -235,15 +235,13 @@ namespace
 
 		void* mapped_buffer =
 			m_buffer_data.map<void>(CD3DX12_RANGE(heap_offset, heap_offset + buffer_size));
-		size_t first = 0;
-		for (const auto& pair : vertex_ranges) {
-			size_t element_count =
-				get_index_count(rsx::method_registers.current_draw_clause.primitive, pair.second);
-			write_index_array_for_non_indexed_non_native_primitive_to_buffer((char*)mapped_buffer,
-				rsx::method_registers.current_draw_clause.primitive, (u32)first, (u32)pair.second);
-			mapped_buffer = (char*)mapped_buffer + element_count * sizeof(u16);
-			first += pair.second;
-		}
+
+		size_t vertex_count = 0;
+		for (const auto& pair : vertex_ranges)
+			vertex_count += pair.second;
+
+		write_index_array_for_non_indexed_non_native_primitive_to_buffer((char *)mapped_buffer, rsx::method_registers.current_draw_clause.primitive, vertex_count);
+
 		m_buffer_data.unmap(CD3DX12_RANGE(heap_offset, heap_offset + buffer_size));
 		D3D12_INDEX_BUFFER_VIEW index_buffer_view = {
 			m_buffer_data.get_heap()->GetGPUVirtualAddress() + heap_offset, (UINT)buffer_size,
