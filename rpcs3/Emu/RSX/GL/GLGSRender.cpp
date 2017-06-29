@@ -186,6 +186,9 @@ void GLGSRender::begin()
 {
 	rsx::thread::begin();
 
+	if (skip_frame)
+		return;
+
 	init_buffers();
 
 	if (!draw_fbo.check())
@@ -319,7 +322,7 @@ namespace
 
 void GLGSRender::end()
 {
-	if (!draw_fbo || !draw_fbo.check())
+	if (skip_frame || !draw_fbo || !draw_fbo.check())
 	{
 		rsx::thread::end();
 		return;
@@ -688,13 +691,9 @@ void GLGSRender::on_exit()
 
 void GLGSRender::clear_surface(u32 arg)
 {
+	if (skip_frame) return;
 	if (rsx::method_registers.surface_color_target() == rsx::surface_target::none) return;
-
-	if ((arg & 0xf3) == 0)
-	{
-		//do nothing
-		return;
-	}
+	if ((arg & 0xf3) == 0) return;
 
 	GLbitfield mask = 0;
 
@@ -963,24 +962,26 @@ void GLGSRender::flip(int buffer)
 	}
 
 	m_frame->flip(m_context);
+	rsx::thread::flip(buffer);
+
+	m_gl_texture_cache.clear_temporary_surfaces();
+
+	for (auto &tex : m_rtts.invalidated_resources)
+		tex->remove();
+
+	m_rtts.invalidated_resources.clear();
+
+	if (g_cfg.video.invalidate_surface_cache_every_frame)
+		m_rtts.invalidate_surface_cache_data(nullptr);
+
+	//If we are skipping the next frame, fo not reset perf counters
+	if (skip_frame) return;
 
 	m_draw_calls = 0;
 	m_begin_time = 0;
 	m_draw_time = 0;
 	m_vertex_upload_time = 0;
 	m_textures_upload_time = 0;
-
-	m_gl_texture_cache.clear_temporary_surfaces();
-
-	for (auto &tex : m_rtts.invalidated_resources)
-	{
-		tex->remove();
-	}
-
-	m_rtts.invalidated_resources.clear();
-
-	if (g_cfg.video.invalidate_surface_cache_every_frame)
-		m_rtts.invalidate_surface_cache_data(nullptr);
 }
 
 
