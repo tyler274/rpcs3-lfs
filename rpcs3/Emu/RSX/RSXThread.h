@@ -28,18 +28,6 @@ extern rsx::frame_capture_data frame_debug;
 
 namespace rsx
 {
-	namespace old_shaders_cache
-	{
-		enum class shader_language
-		{
-			glsl,
-			hlsl,
-		};
-	}
-}
-
-namespace rsx
-{
 	namespace limits
 	{
 		enum
@@ -51,54 +39,6 @@ namespace rsx
 			tiles_count = 15,
 			zculls_count = 8,
 			color_buffers_count = 4
-		};
-	}
-
-	namespace old_shaders_cache
-	{
-		struct decompiled_shader
-		{
-			std::string code;
-		};
-
-		struct finalized_shader
-		{
-			u64 ucode_hash;
-			std::string code;
-		};
-
-		template<typename Type, typename KeyType = u64, typename Hasher = std::hash<KeyType>>
-		struct cache
-		{
-		private:
-			std::unordered_map<KeyType, Type, Hasher> m_entries;
-
-		public:
-			const Type* find(u64 key) const
-			{
-				auto found = m_entries.find(key);
-
-				if (found == m_entries.end())
-					return nullptr;
-
-				return &found->second;
-			}
-
-			void insert(KeyType key, const Type &shader)
-			{
-				m_entries.insert({ key, shader });
-			}
-		};
-
-		struct shaders_cache
-		{
-			cache<decompiled_shader> decompiled_fragment_shaders;
-			cache<decompiled_shader> decompiled_vertex_shaders;
-			cache<finalized_shader> finailized_fragment_shaders;
-			cache<finalized_shader> finailized_vertex_shaders;
-
-			void load(const std::string &path, shader_language lang);
-			void load(shader_language lang);
 		};
 	}
 
@@ -172,9 +112,6 @@ namespace rsx
 		std::vector<u32> element_push_buffer;
 
 	public:
-		old_shaders_cache::shaders_cache shaders_cache;
-		rsx::programs_cache programs_cache;
-
 		CellGcmControl* ctrl = nullptr;
 
 		Timer timer_sync;
@@ -260,10 +197,10 @@ namespace rsx
 
 		virtual void on_init_rsx() = 0;
 		virtual void on_init_thread() = 0;
-		virtual bool do_method(u32 cmd, u32 value) { return false; }
+		virtual bool do_method(u32 /*cmd*/, u32 /*value*/) { return false; }
 		virtual void flip(int buffer) = 0;
 		virtual u64 timestamp() const;
-		virtual bool on_access_violation(u32 address, bool is_writing) { return false; }
+		virtual bool on_access_violation(u32 /*address*/, bool /*is_writing*/) { return false; }
 
 		gsl::span<const gsl::byte> get_raw_index_array(const std::vector<std::pair<u32, u32> >& draw_indexed_clause) const;
 		gsl::span<const gsl::byte> get_raw_vertex_buffer(const rsx::data_array_format_info&, u32 base_offset, const std::vector<std::pair<u32, u32>>& vertex_ranges) const;
@@ -307,9 +244,9 @@ namespace rsx
 		/**
 		 * Fill buffer with 4x4 scale offset matrix.
 		 * Vertex shader's position is to be multiplied by this matrix.
-		 * if is_d3d is set, the matrix is modified to use d3d convention.
+		 * if flip_y is set, the matrix is modified to use d3d convention.
 		 */
-		void fill_scale_offset_data(void *buffer, bool flip_y, bool symmetrical_z) const;
+		void fill_scale_offset_data(void *buffer, bool flip_y) const;
 
 		/**
 		 * Fill buffer with user clip information
@@ -354,9 +291,8 @@ namespace rsx
 
 		virtual std::pair<std::string, std::string> get_programs() const { return std::make_pair("", ""); };
 
-		virtual bool scaled_image_from_memory(blit_src_info& src_info, blit_dst_info& dst_info, bool interpolate){ return false;  }
+		virtual bool scaled_image_from_memory(blit_src_info& /*src_info*/, blit_dst_info& /*dst_info*/, bool /*interpolate*/){ return false;  }
 
-		struct raw_program get_raw_program() const;
 	public:
 		void reset();
 		void init(const u32 ioAddress, const u32 ioSize, const u32 ctrlAddress, const u32 localAddress);

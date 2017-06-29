@@ -33,7 +33,19 @@
 
 extern std::string ppu_get_syscall_name(u64 code);
 
-static constexpr ppu_function_t null_func = nullptr;
+template <>
+void fmt_class_string<ppu_syscall_code>::format(std::string& out, u64 arg)
+{
+	out += ppu_get_syscall_name(arg);
+}
+
+static bool null_func(ppu_thread& ppu)
+{
+	LOG_TODO(HLE, "Unimplemented syscall %s -> CELL_OK", ppu_syscall_code(ppu.gpr[11]));
+	ppu.gpr[3] = 0;
+	ppu.cia += 4;
+	return false;
+}
 
 std::array<ppu_function_t, 1024> g_ppu_syscall_table{};
 
@@ -610,7 +622,7 @@ const std::array<ppu_function_t, 1024> s_ppu_syscall_table
 	null_func,//BIND_FUNC(sys_rsxaudio_close_connection)    //655 (0x28F)
 	null_func,//BIND_FUNC(sys_rsxaudio_prepare_process)     //656 (0x290)
 	null_func,//BIND_FUNC(sys_rsxaudio_start_process)       //657 (0x291)
-	null_func,//BIND_FUNC(sys_rsxaudio_)                    //658 (0x292)
+	null_func,//BIND_FUNC(sys_rsxaudio_stop_process)        //658 (0x292)
 	null_func,//BIND_FUNC(sys_rsxaudio_)                    //659 (0x293)
 
 	null_func, null_func, null_func, null_func, null_func,  //664  UNS
@@ -973,15 +985,9 @@ extern void ppu_execute_syscall(ppu_thread& ppu, u64 code)
 		if (auto func = g_ppu_syscall_table[code])
 		{
 			func(ppu);
-			LOG_TRACE(PPU, "Syscall '%s' (%llu) finished, r3=0x%llx", ppu_get_syscall_name(code), code, ppu.gpr[3]);
+			LOG_TRACE(PPU, "Syscall '%s' (%llu) finished, r3=0x%llx", ppu_syscall_code(code), code, ppu.gpr[3]);
+			return;
 		}
-		else
-		{
-			LOG_TODO(HLE, "Unimplemented syscall %s -> CELL_OK", ppu_get_syscall_name(code));
-			ppu.gpr[3] = 0;
-		}
-
-		return;
 	}
 
 	fmt::throw_exception("Invalid syscall number (%llu)", code);

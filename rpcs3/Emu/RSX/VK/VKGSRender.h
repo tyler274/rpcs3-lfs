@@ -11,9 +11,16 @@
 #include "VKProgramBuffer.h"
 #include "../GCM.h"
 #include "../rsx_utils.h"
+#include <thread>
 #include <atomic>
 
 #pragma comment(lib, "VKstatic.1.lib")
+
+//Heap allocation sizes in MB
+#define VK_ATTRIB_RING_BUFFER_SIZE_M 256
+#define VK_UBO_RING_BUFFER_SIZE_M 32
+#define VK_INDEX_RING_BUFFER_SIZE_M 64
+#define VK_TEXTURE_UPLOAD_RING_BUFFER_SIZE_M 128
 
 #define VK_MAX_ASYNC_CB_COUNT 64
 
@@ -149,11 +156,11 @@ private:
 	u32 m_client_height = 0;
 
 	u32 m_draw_calls = 0;
-	u32 m_setup_time = 0;
-	u32 m_vertex_upload_time = 0;
-	u32 m_textures_upload_time = 0;
-	u32 m_draw_time = 0;
-	u32 m_flip_time = 0;
+	s64 m_setup_time = 0;
+	s64 m_vertex_upload_time = 0;
+	s64 m_textures_upload_time = 0;
+	s64 m_draw_time = 0;
+	s64 m_flip_time = 0;
 
 	u32 m_used_descriptors = 0;
 	u8 m_draw_buffers_count = 0;
@@ -165,10 +172,14 @@ private:
 	s32  m_last_flushable_cb = -1;
 	
 	std::mutex m_flush_queue_mutex;
-	std::atomic<bool> m_flush_commands = false;
+	std::atomic<bool> m_flush_commands = { false };
 	std::atomic<int> m_queued_threads = { 0 };
 
 	std::thread::id rsx_thread;
+	
+#ifdef __linux__
+	Display *m_display_handle = nullptr;
+#endif
 
 public:
 	VKGSRender();

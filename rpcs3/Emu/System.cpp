@@ -89,9 +89,7 @@ void fmt_class_string<video_renderer>::format(std::string& out, u64 arg)
 		{
 		case video_renderer::null: return "Null";
 		case video_renderer::opengl: return "OpenGL";
-#ifdef _WIN32
 		case video_renderer::vulkan: return "Vulkan";
-#endif
 #ifdef _MSC_VER
 		case video_renderer::dx12: return "D3D12";
 #endif
@@ -424,7 +422,22 @@ void Emulator::Load()
 
 			if (m_elf_path.empty())
 			{
-				m_elf_path = "/host_root/" + m_path;
+				if (!bdvd_dir.empty() && fs::is_dir(bdvd_dir))
+				{
+					//Disc games are on /dev_bdvd/
+					size_t pos = m_path.rfind("PS3_GAME");
+					m_elf_path = "/dev_bdvd/" + m_path.substr(pos);
+				}
+				else if (m_path.find(vfs::get("/dev_hdd0/game/")) != -1)
+				{
+					m_elf_path = "/dev_hdd0/game/" + m_path.substr(vfs::get("/dev_hdd0/game/").size());
+				}
+				else
+				{
+					//For homebrew
+					m_elf_path = "/host_root/" + m_path;
+				}
+
 				LOG_NOTICE(LOADER, "Elf path: %s", m_elf_path);
 			}
 
@@ -668,6 +681,11 @@ void Emulator::Stop()
 	{
 		Init();
 	}
+
+#ifdef LLVM_AVAILABLE
+	extern void jit_finalize();
+	jit_finalize();
+#endif
 }
 
 s32 error_code::error_report(const fmt_type_info* sup, u64 arg)

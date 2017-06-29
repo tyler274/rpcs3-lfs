@@ -1,36 +1,10 @@
 #pragma once
-#include <rsx_decompiler.h>
 #include "Utilities/VirtualMemory.h"
 #include "Emu/Memory/vm.h"
 #include "gcm_enums.h"
 
 namespace rsx
 {
-	struct shader_info
-	{
-		decompiled_shader *decompiled;
-		complete_shader *complete;
-	};
-
-	struct program_info
-	{
-		shader_info vertex_shader;
-		shader_info fragment_shader;
-
-		void *program;
-	};
-
-	struct program_cache_context
-	{
-		decompile_language lang;
-
-		void*(*compile_shader)(program_type type, const std::string &code);
-		rsx::complete_shader(*complete_shader)(const decompiled_shader &shader, program_state state);
-		void*(*make_program)(const void *vertex_shader, const void *fragment_shader);
-		void(*remove_program)(void *ptr);
-		void(*remove_shader)(void *ptr);
-	};
-
 	struct blit_src_info
 	{
 		blit_engine::transfer_source_format format;
@@ -64,51 +38,21 @@ namespace rsx
 		u32  rsx_address;
 	};
 
-	class shaders_cache
+	enum protection_policy
 	{
-		struct entry_t
-		{
-			std::int64_t index;
-			decompiled_shader decompiled;
-			std::unordered_map<program_state, complete_shader, hasher> complete;
-		};
-
-		std::unordered_map<raw_shader, entry_t, hasher> m_entries;
-		std::string m_path;
-		std::int64_t m_index = -1;
-
-	public:
-		void path(const std::string &path_);
-
-		shader_info get(const program_cache_context &ctxt, raw_shader &raw_shader, const program_state& state);
-		void clear(const program_cache_context& context);
-	};
-
-	class programs_cache
-	{
-		std::unordered_map<raw_program, program_info, hasher> m_program_cache;
-
-		shaders_cache m_vertex_shaders_cache;
-		shaders_cache m_fragment_shader_cache;
-
-	public:
-		program_cache_context context;
-
-		programs_cache();
-		~programs_cache();
-
-		program_info get(raw_program raw_program_, decompile_language lang);
-		void clear();
+		protect_policy_one_page,	//Only guard one page, preferrably one where this section 'wholly' fits
+		protect_policy_full_range	//Guard the full memory range. Shared pages may be invalidated by access outside the object we're guarding
 	};
 
 	class buffered_section
 	{
+	private:
+		u32 locked_address_base = 0;
+		u32 locked_address_range = 0;
+
 	protected:
 		u32 cpu_address_base = 0;
 		u32 cpu_address_range = 0;
-
-		u32 locked_address_base = 0;
-		u32 locked_address_range = 0;
 
 		utils::protection protection = utils::protection::rw;
 
@@ -125,7 +69,7 @@ namespace rsx
 		buffered_section() {}
 		~buffered_section() {}
 
-		void reset(u32 base, u32 length)
+		void reset(u32 base, u32 length, protection_policy protect_policy= protect_policy_full_range)
 		{
 			verify(HERE), locked == false;
 
@@ -133,7 +77,24 @@ namespace rsx
 			cpu_address_range = length;
 
 			locked_address_base = (base & ~4095);
-			locked_address_range = align(base + length, 4096) - locked_address_base;
+
+			if (protect_policy == protect_policy_one_page)
+			{
+				locked_address_range = 4096;
+				if (locked_address_base < base)
+				{
+					//Try the next page if we can
+					//TODO: If an object spans a boundary without filling either side, guard the larger page occupancy
+					const u32 next_page = locked_address_base + 4096;
+					if ((base + length) >= (next_page + 4096))
+					{
+						//The object spans the entire page. Guard this instead
+						locked_address_base = next_page;
+					}
+				}
+			}
+			else
+				locked_address_range = align(base + length, 4096) - locked_address_base;
 
 			protection = utils::protection::rw;
 			locked = false;

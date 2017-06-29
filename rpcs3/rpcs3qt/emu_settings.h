@@ -1,5 +1,4 @@
-#ifndef EMU_SETTINGS_H
-#define EMU_SETTINGS_H
+#pragma once
 
 #include "Utilities/File.h"
 #include "Utilities/Log.h"
@@ -11,18 +10,6 @@
 #include <QMap>
 #include <QObject>
 #include <QComboBox>
-
-#ifdef _MSC_VER
-#include <Windows.h>
-#undef GetHwnd
-#include <d3d12.h>
-#include <wrl/client.h>
-#include <dxgi1_4.h>
-#endif
-
-#ifdef _WIN32
-#include "Emu/RSX/VK/VKHelpers.h"
-#endif
 
 inline QString qstr(const std::string& _in) { return QString::fromUtf8(_in.data(), _in.size()); }
 
@@ -36,60 +23,7 @@ struct Render_Creator
 	QString render_D3D12 = QObject::tr("D3D12");
 	QString render_OpenGL = QObject::tr("OpenGL");
 
-	Render_Creator()
-	{
-		// check for dx12 adapters
-#ifdef _MSC_VER
-		Microsoft::WRL::ComPtr<IDXGIFactory4> dxgi_factory;
-		supportsD3D12 = SUCCEEDED(CreateDXGIFactory(IID_PPV_ARGS(&dxgi_factory)));
-
-		if (supportsD3D12)
-		{
-			supportsD3D12 = false;
-			IDXGIAdapter1* pAdapter = nullptr;
-
-			for (UINT adapterIndex = 0; DXGI_ERROR_NOT_FOUND != dxgi_factory->EnumAdapters1(adapterIndex, &pAdapter); ++adapterIndex)
-			{
-				HMODULE D3D12Module = verify("d3d12.dll", LoadLibrary(L"d3d12.dll"));
-				PFN_D3D12_CREATE_DEVICE wrapD3D12CreateDevice = (PFN_D3D12_CREATE_DEVICE)GetProcAddress(D3D12Module, "D3D12CreateDevice");
-
-				if (SUCCEEDED(wrapD3D12CreateDevice(pAdapter, D3D_FEATURE_LEVEL_11_0, _uuidof(ID3D12Device), nullptr)))
-				{
-					//A device with D3D12 support found. Init data
-					supportsD3D12 = true;
-
-					DXGI_ADAPTER_DESC desc;
-					pAdapter->GetDesc(&desc);
-					D3D12Adapters.append(QString::fromWCharArray(desc.Description));
-				}
-			}
-		}
-#endif
-
-		// check for vulkan adapters
-#ifdef _WIN32
-		vk::context device_enum_context;
-		u32 instance_handle = device_enum_context.createInstance("RPCS3", true);
-
-		if (instance_handle > 0)
-		{
-			device_enum_context.makeCurrentInstance(instance_handle);
-			std::vector<vk::physical_device>& gpus = device_enum_context.enumerateDevices();
-
-			if (gpus.size() > 0)
-			{
-				//A device with vulkan support found. Init data
-				supportsVulkan = true;
-
-				for (auto& gpu : gpus)
-				{
-					vulkanAdapters.append(qstr(gpu.name()));
-				}
-			}
-		}
-#endif
-
-	}
+	Render_Creator();
 };
 
 // Node location
@@ -128,6 +62,9 @@ public:
 		GPUTextureScaling,
 		D3D12Adapter,
 		VulkanAdapter,
+		ForceHighpZ,
+		AutoInvalidateCache,
+		StrictRenderingMode,
 
 		// Audio
 		AudioRenderer,
@@ -155,6 +92,12 @@ public:
 		// Language
 		Language,
 		EnableHostRoot,
+
+		// Virtual File System
+		dev_hdd0Location,
+		dev_hdd1Location,
+		dev_flashLocation,
+		dev_usb000Location,
 	};
 
 	/** Creates a settings object which reads in the config.yml file at rpcs3/bin/%path%/config.yml 
@@ -180,7 +123,7 @@ public:
 
 	/** Sets the setting type to a given value.*/
 	void SetSetting(SettingsType type, const std::string& val);
-public slots:
+public Q_SLOTS:
 /** Writes the unsaved settings to file.  Used in settings dialog on accept.*/
 	void SaveSettings();
 private:
@@ -207,10 +150,13 @@ private:
 		{ VSync,			{ "Video", "VSync"}},
 		{ DebugOutput,		{ "Video", "Debug output"}},
 		{ DebugOverlay,		{ "Video", "Debug overlay"}},
-		{ LegacyBuffers,	{ "Video", "Use Legacy OpenGL Buffers (Debug)"}},
+		{ LegacyBuffers,	{ "Video", "Use Legacy OpenGL Buffers"}},
 		{ GPUTextureScaling,{ "Video", "Use GPU texture scaling"}},
-		{ D3D12Adapter,		{ "Video", "D3D12", "Adapter"}},
-		{ VulkanAdapter,		{ "Video", "Vulkan", "Adapter"}},
+		{ ForceHighpZ,      { "Video", "Force High Precision Z buffer"}},
+		{ AutoInvalidateCache, { "Video", "Invalidate Cache Every Frame"}},
+		{ StrictRenderingMode, { "Video", "Strict Rendering Mode"}},
+		{ D3D12Adapter,        { "Video", "D3D12", "Adapter"}},
+		{ VulkanAdapter,       { "Video", "Vulkan", "Adapter"}},
 
 		// Audio
 		{ AudioRenderer,	{ "Audio", "Renderer"}},
@@ -239,10 +185,14 @@ private:
 		{Language,			{ "System", "Language"}},
 		{EnableHostRoot,	{ "VFS", "Enable /host_root/"}},
 
+		// Virtual File System
+		{ dev_hdd0Location, { "VFS", "/dev_hdd0/" }},
+		{ dev_hdd1Location, { "VFS", "/dev_hdd1/" }},
+		{ dev_flashLocation, { "VFS", "/dev_flash/"}},
+		{ dev_usb000Location, { "VFS", "/dev_usb000/"}},
+
 	};
 
 	YAML::Node currentSettings; // The current settings as a YAML node.
 	fs::file config; //! File to read/write the config settings.
 };
-
-#endif
