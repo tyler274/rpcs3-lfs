@@ -411,7 +411,7 @@ void GLFragmentDecompilerThread::insertMainEnd(std::stringstream & OS)
 				parameters += ", ";
 
 			parameters += reg_name;
-			OS << "	vec4 " << reg_name << " = vec4(0.);\n";
+			OS << "	vec4 " << reg_name << " = vec4(1.);\n";
 		}
 	}
 
