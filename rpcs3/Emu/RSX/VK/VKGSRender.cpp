@@ -1881,6 +1881,13 @@ void VKGSRender::prepare_rtts()
 
 void VKGSRender::flip(int buffer)
 {
+	if (skip_frame)
+	{
+		m_frame->flip(m_context);
+		rsx::thread::flip(buffer);
+		return;
+	}
+
 	bool resize_screen = false;
 
 	if (m_client_height != m_frame->client_height() ||

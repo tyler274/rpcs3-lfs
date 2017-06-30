@@ -863,6 +863,13 @@ bool GLGSRender::load_program()
 
 void GLGSRender::flip(int buffer)
 {
+	if (skip_frame)
+	{
+		m_frame->flip(m_context);
+		rsx::thread::flip(buffer);
+		return;
+	}
+
 	u32 buffer_width = gcm_buffers[buffer].width;
 	u32 buffer_height = gcm_buffers[buffer].height;
 	u32 buffer_pitch = gcm_buffers[buffer].pitch;
