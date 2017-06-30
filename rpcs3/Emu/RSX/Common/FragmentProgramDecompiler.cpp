@@ -734,11 +734,14 @@ std::string FragmentProgramDecompiler::Decompile()
 		default:
 			int prev_force_unit = forced_unit;
 
+			//Some instructions do not respect forced unit
+			//Tested with Tales of Vesperia
+			if (SIP()) break;
+			if (handle_tex_srb(opcode)) break;
+
 			if (forced_unit == FORCE_NONE)
 			{
-				if (SIP()) break;
 				if (handle_sct(opcode)) break;
-				if (handle_tex_srb(opcode)) break;
 				if (handle_scb(opcode)) break;
 			}
 			else if (forced_unit == FORCE_SCT)
