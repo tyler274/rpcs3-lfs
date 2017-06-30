@@ -1885,6 +1885,17 @@ void VKGSRender::flip(int buffer)
 	{
 		m_frame->flip(m_context);
 		rsx::thread::flip(buffer);
+
+		if (!skip_frame)
+		{
+			m_draw_calls = 0;
+			m_instanced_draws = 0;
+			m_draw_time = 0;
+			m_setup_time = 0;
+			m_vertex_upload_time = 0;
+			m_textures_upload_time = 0;
+		}
+
 		return;
 	}
 
