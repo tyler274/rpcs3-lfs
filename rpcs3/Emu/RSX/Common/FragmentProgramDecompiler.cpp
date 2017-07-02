@@ -125,7 +125,7 @@ std::string FragmentProgramDecompiler::GetMask()
 
 std::string FragmentProgramDecompiler::AddReg(u32 index, int fp16)
 {
-	return m_parr.AddParam(PF_PARAM_NONE, getFloatTypeName(4), std::string(fp16 ? "h" : "r") + std::to_string(index), getFloatTypeName(4) + "(1., 1., 1., 1.)");
+	return m_parr.AddParam(PF_PARAM_NONE, getFloatTypeName(4), std::string(fp16 ? "h" : "r") + std::to_string(index), getFloatTypeName(4) + "(0., 0., 0., 0.)");
 }
 
 bool FragmentProgramDecompiler::HasReg(u32 index, int fp16)
@@ -449,7 +449,7 @@ bool FragmentProgramDecompiler::handle_sct(u32 opcode)
 	case RSX_FP_OPCODE_MOV: SetDst("$0"); return true;
 	case RSX_FP_OPCODE_MUL: SetDst("($0 * $1)"); return true;
 	// Note: It's higly likely that RCP is not IEEE compliant but a game that uses rcp(0) has to be found
-	case RSX_FP_OPCODE_RCP: SetDst("(1. / " +  NotZero("$0") + ")"); return true;
+	case RSX_FP_OPCODE_RCP: SetDst("(1. / " +  NotZero("$0.x") + ").xxxx"); return true;
 	// Note: RSQ is not IEEE compliant. rsq(0) is some big number (Silent Hill 3 HD)
 	// It is not know what happens if 0 is negative.
 	case RSX_FP_OPCODE_RSQ: SetDst("(1. / sqrt(" + NotZeroPositive("$0.x") + ").xxxx)"); return true;

@@ -250,7 +250,7 @@ void D3D12FragmentDecompiler::insertMainStart(std::stringstream & OS)
 	{
 		for (const ParamItem &PI : PT.items)
 			if (output_value.find(PI.name) == output_value.end())
-				OS << "	" << PT.type << " " << PI.name << " = float4(1., 1., 1., 1.);\n";
+				OS << "	" << PT.type << " " << PI.name << " = float4(0., 0., 0., 0.);\n";
 	}
 	// Declare texture coordinate scaling component (to handle unormalized texture coordinates)
 
@@ -281,16 +281,16 @@ void D3D12FragmentDecompiler::insertMainEnd(std::stringstream & OS)
 	OS << "\n";
 	OS << "PixelOutput main(PixelInput In, bool is_front_face : SV_IsFrontFace)\n";
 	OS << "{\n";
-	OS << "	float4 r0 = float4(1., 1., 1., 1.);\n";
-	OS << "	float4 r1 = float4(1., 1., 1., 1.);\n";
-	OS << "	float4 r2 = float4(1., 1., 1., 1.);\n";
-	OS << "	float4 r3 = float4(1., 1., 1., 1.);\n";
-	OS << "	float4 r4 = float4(1., 1., 1., 1.);\n";
-	OS << "	float4 h0 = float4(1., 1., 1., 1.);\n";
-	OS << "	float4 h2 = float4(1., 1., 1., 1.);\n";
-	OS << "	float4 h4 = float4(1., 1., 1., 1.);\n";
-	OS << "	float4 h6 = float4(1., 1., 1., 1.);\n";
-	OS << "	float4 h8 = float4(1., 1., 1., 1.);\n";
+	OS << "	float4 r0 = float4(0., 0., 0., 0.);\n";
+	OS << "	float4 r1 = float4(0., 0., 0., 0.);\n";
+	OS << "	float4 r2 = float4(0., 0., 0., 0.);\n";
+	OS << "	float4 r3 = float4(0., 0., 0., 0.);\n";
+	OS << "	float4 r4 = float4(0., 0., 0., 0.);\n";
+	OS << "	float4 h0 = float4(0., 0., 0., 0.);\n";
+	OS << "	float4 h2 = float4(0., 0., 0., 0.);\n";
+	OS << "	float4 h4 = float4(0., 0., 0., 0.);\n";
+	OS << "	float4 h6 = float4(0., 0., 0., 0.);\n";
+	OS << "	float4 h8 = float4(0., 0., 0., 0.);\n";
 	OS << "	ps_impl(is_front_face, In, r0, h0, r1, h2, r2, h4, r3, h6, r4, h8);\n";
 
 	const std::pair<std::string, std::string> table[] =
