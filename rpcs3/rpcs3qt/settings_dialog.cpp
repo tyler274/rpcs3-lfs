@@ -666,7 +666,7 @@ settings_dialog::settings_dialog(std::shared_ptr<gui_settings> xSettings, const 
 		AddStylesheets();
 	}
 
-	setFixedSize(sizeHint());
+	layout()->setSizeConstraint(QLayout::SetFixedSize);
 }
 
 void settings_dialog::AddConfigs()
