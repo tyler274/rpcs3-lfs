@@ -250,7 +250,7 @@ s32 sys_lwcond_wait(ppu_thread& ppu, vm::ptr<sys_lwcond_t> lwcond, u64 timeout)
 		}
 
 		// restore owner and recursive value
-		auto old = lwmutex->vars.owner.exchange(tid);
+		const auto old = lwmutex->vars.owner.exchange(tid);
 		lwmutex->recursive_count = recursive_value;
 
 		if (old != lwmutex_reserved)
