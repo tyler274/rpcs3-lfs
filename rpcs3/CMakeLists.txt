@@ -136,7 +136,7 @@ set(CMAKE_MODULE_PATH "${RPCS3_SRC_DIR}/cmake_modules")
 find_package(OpenGL REQUIRED)
 find_package(OpenAL REQUIRED)
 if (NOT WITHOUT_LLVM)
-	find_package(LLVM 4.0 CONFIG)
+	find_package(LLVM 5.0 CONFIG)
 endif()
 
 
