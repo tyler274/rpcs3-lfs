@@ -126,12 +126,19 @@ static NEVER_INLINE s32 savedata_op(ppu_thread &ppu, u32 operation, u32 version,
                             save_entry2.size += entry2.size;
                         }
 
-                        save_entry2.atime = entry.atime;
-                        save_entry2.mtime = entry.mtime;
-                        save_entry2.ctime = entry.ctime;
-                        //save_entry2.iconBuf = NULL; // TODO: Here should be the PNG buffer
-                        //save_entry2.iconBufSize = 0; // TODO: Size of the PNG file
-                        save_entry2.isNew = false;
+						save_entry2.atime = entry.atime;
+						save_entry2.mtime = entry.mtime;
+						save_entry2.ctime = entry.ctime;
+						if (fs::is_file(base_dir + entry.name + "/ICON0.PNG"))
+						{
+							fs::file icon = fs::file(base_dir + entry.name + "/ICON0.PNG");
+							u32 iconSize = icon.size();
+							uchar* iconData = new uchar[iconSize];
+							icon.read(iconData, iconSize);
+							save_entry2.iconBuf.reset(iconData);
+							save_entry2.iconBufSize = iconSize;
+						}
+						save_entry2.isNew = false;
 
                         save_entries.push_back(save_entry2);
                     }
@@ -190,14 +197,23 @@ static NEVER_INLINE s32 savedata_op(ppu_thread &ppu, u32 operation, u32 version,
                 return CELL_SAVEDATA_ERROR_CBRESULT;
             }
 
-            // Clean save data list
-            save_entries.erase(std::remove_if(save_entries.begin(), save_entries.end(),
-                                              [&listSet](const SaveDataEntry &entry) -> bool {
-                                                  for (u32 i = 0; i < listSet->fixedListNum; i++) {
-                                                      if (entry.dirName == listSet->fixedList[i].dirName) {
-                                                          return false;
-                                                      }
-                                                  }
+			// if the callback has returned ok, lets return OK.
+			// typically used at game launch when no list is actually required.
+			if ((result->result == CELL_SAVEDATA_CBRESULT_OK_LAST) || (result->result == CELL_SAVEDATA_CBRESULT_OK_LAST_NOCONFIRM))
+			{
+				return CELL_OK;
+			}
+
+			// Clean save data list
+			save_entries.erase(std::remove_if(save_entries.begin(), save_entries.end(), [&listSet](const SaveDataEntry& entry) -> bool
+			{
+				for (u32 i = 0; i < listSet->fixedListNum; i++)
+				{
+					if (entry.dirName == listSet->fixedList[i].dirName)
+					{
+						return false;
+					}
+				}
 
                                                   return true;
                                               }), save_entries.end());
@@ -257,39 +273,33 @@ static NEVER_INLINE s32 savedata_op(ppu_thread &ppu, u32 operation, u32 version,
                 }
             }
 
-            // Display Save Data List but do so asynchronously in the GUI thread.  For, qTimers only work using main UI thread.
-            atomic_t<bool> dlg_result(false);
-            bool hasNewData = (bool) listSet->newData; // Are we saving?
+			// Display Save Data List but do so asynchronously in the GUI thread.
+			bool hasNewData = (bool)listSet->newData; // newData
+			atomic_t<bool> dlg_result(false);
 
-
-            Emu.CallAfter([&]() {
-                selected = Emu.GetCallbacks().get_save_dialog()->ShowSaveDataList(save_entries, focused, hasNewData,
-                                                                                  listSet);
-                dlg_result = true;
-            });
+			Emu.CallAfter([&]()
+			{
+				selected = Emu.GetCallbacks().get_save_dialog()->ShowSaveDataList(save_entries, focused, hasNewData, listSet);
+				dlg_result = true;
+			});
 
             while (!dlg_result) {
                 thread_ctrl::wait_for(1000);
             }
 
-            if (selected == -1) {
-                if (hasNewData) {
-                    save_entry.dirName = listSet->newData->dirName.get_ptr();
-                } else {
-                    // This happens if someone tries to load but there is no data selected.  Some games will throw errors (Akiba) if cell_ok is returned
-                    return CELL_CANCEL;
-                }
-            }
-                // Cancel selected in UI
-            else if (selected == -2) {
-                return CELL_CANCEL;
-            }
+			// UI returns -1 for new save games
+			if (selected == -1)
+			{
+				save_entry.dirName = listSet->newData->dirName.get_ptr();
+			}
 
-            if ((result->result == CELL_SAVEDATA_CBRESULT_OK_LAST) ||
-                (result->result == CELL_SAVEDATA_CBRESULT_OK_LAST_NOCONFIRM)) {
-                return CELL_OK;
-            }
-        }
+			// Cancel selected in UI
+			if (selected == -2)
+			{
+				return CELL_CANCEL;
+			}
+
+		}
 
         if (funcFixed) {
             // Fixed Callback
