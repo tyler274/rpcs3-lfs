@@ -266,6 +266,7 @@ struct cfg_root : cfg::node
 		cfg::_bool bind_spu_cores{this, "Bind SPU threads to secondary cores"};
 		cfg::_bool lower_spu_priority{this, "Lower SPU thread priority"};
 		cfg::_bool spu_debug{this, "SPU Debug"};
+		cfg::_int<32, 16384> max_spu_immediate_write_size{this, "Maximum immediate DMA write size", 16384}; // Maximum size that an SPU thread can write directly without posting to MFC
 
 		cfg::_enum<lib_loading_type> lib_loading{this, "Lib Loader", lib_loading_type::automatic};
 		cfg::_bool hook_functions{this, "Hook static functions"};
@@ -309,6 +310,7 @@ struct cfg_root : cfg::node
 		cfg::_bool overlay{this, "Debug overlay"};
 		cfg::_bool gl_legacy_buffers{this, "Use Legacy OpenGL Buffers"};
 		cfg::_bool use_gpu_texture_scaling{this, "Use GPU texture scaling", true};
+		cfg::_bool stretch_to_display_area{this, "Stretch To Display Area"};
 		cfg::_bool force_high_precision_z_buffer{this, "Force High Precision Z buffer"};
 		cfg::_bool invalidate_surface_cache_every_frame{this, "Invalidate Cache Every Frame", true};
 		cfg::_bool strict_rendering_mode{this, "Strict Rendering Mode"};

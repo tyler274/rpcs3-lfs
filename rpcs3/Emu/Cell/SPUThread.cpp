@@ -147,7 +147,7 @@ void SPUThread::on_spawn()
 			auto half_count = core_count / 2;
 			auto assigned_secondary_core = ((g_num_spu_threads % half_count) * 2) + 1;
 
-			thread_ctrl::set_ideal_processor_core(assigned_secondary_core);
+			thread_ctrl::set_ideal_processor_core((s32)assigned_secondary_core);
 		}
 	}
 

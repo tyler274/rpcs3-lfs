@@ -1,0 +1,3394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Project"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="clang"/>
+		<Option virtualFolders="CMake Files\;CMake Files\3rdparty\;CMake Files\3rdparty\libpng\;CMake Files\3rdparty\libpng\scripts\;CMake Files\3rdparty\hidapi\;CMake Files\3rdparty\hidapi\linux\;CMake Files\Vulkan\;CMake Files\rpcs3\;CMake Files\rpcs3\cmake_modules\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\lib64\;CMake Files\..\..\..\..\usr\lib64\cmake\;CMake Files\..\..\..\..\usr\lib64\cmake\Qt5\;CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Widgets\;CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\;CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Core\;CMake Files\..\..\..\..\usr\lib64\cmake\llvm\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\cmake\;CMake Files\..\..\..\..\usr\lib\cmake\llvm\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/tyler274/Builds/rpcs3"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="/home/tyler274/Builds/rpcs3"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/home/tyler274/Builds/rpcs3"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/home/tyler274/Builds/rpcs3"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/home/tyler274/Builds/rpcs3"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/tyler274/Builds/rpcs3"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/tyler274/Builds/rpcs3"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="png16_static">
+				<Option output="/home/tyler274/Builds/rpcs3/3rdparty/libpng/libpng16.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/tyler274/Builds/rpcs3/3rdparty/libpng"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-DCMAKE_BUILD"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/3rdparty/libpng"/>
+					<Add directory="/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/clang/5.0.0/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/3rdparty/libpng/Makefile&quot;  VERBOSE=1 png16_static"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/3rdparty/libpng/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/3rdparty/libpng/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/3rdparty/libpng/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="png16_static/fast">
+				<Option output="/home/tyler274/Builds/rpcs3/3rdparty/libpng/libpng16.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/tyler274/Builds/rpcs3/3rdparty/libpng"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-DCMAKE_BUILD"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/3rdparty/libpng"/>
+					<Add directory="/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/clang/5.0.0/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/3rdparty/libpng/Makefile&quot;  VERBOSE=1 png16_static/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/3rdparty/libpng/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/3rdparty/libpng/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/3rdparty/libpng/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="all_pch">
+				<Option working_dir="/home/tyler274/Builds/rpcs3/rpcs3"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 all_pch"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rpcs3">
+				<Option output="/home/tyler274/Builds/rpcs3/bin/rpcs3" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir=""/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-DCMAKE_BUILD"/>
+					<Add option="-DGL_GLEXT_PROTOTYPES"/>
+					<Add option="-DGLX_GLXEXT_PROTOTYPES"/>
+					<Add option="-DLLVM_AVAILABLE"/>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_NO_DEBUG"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3_autogen/include"/>
+					<Add directory="/usr/include/qt"/>
+					<Add directory="/usr/include/qt/QtWidgets"/>
+					<Add directory="/usr/include/qt/QtGui"/>
+					<Add directory="/usr/include/qt/QtCore"/>
+					<Add directory="/usr/lib/qt/mkspecs/linux-g++"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/libpng"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/ffmpeg/linux/x86_64/include"/>
+					<Add directory="/usr/include/AL"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/pugixml/src"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/Loader"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/Crypto"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/.."/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../Utilities/yaml-cpp/include"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../asmjit/src/asmjit"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/GSL/include"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../Vulkan/Vulkan-LoaderAndValidationLayers/include"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../Vulkan/glslang/glslang/Public"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../Vulkan/glslang"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/hidapi/hidapi"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/GL"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/stblib"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/cereal/include"/>
+					<Add directory="/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/clang/5.0.0/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 rpcs3"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rpcs3/fast">
+				<Option output="/home/tyler274/Builds/rpcs3/bin/rpcs3" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir=""/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-DCMAKE_BUILD"/>
+					<Add option="-DGL_GLEXT_PROTOTYPES"/>
+					<Add option="-DGLX_GLXEXT_PROTOTYPES"/>
+					<Add option="-DLLVM_AVAILABLE"/>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_NO_DEBUG"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3_autogen/include"/>
+					<Add directory="/usr/include/qt"/>
+					<Add directory="/usr/include/qt/QtWidgets"/>
+					<Add directory="/usr/include/qt/QtGui"/>
+					<Add directory="/usr/include/qt/QtCore"/>
+					<Add directory="/usr/lib/qt/mkspecs/linux-g++"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/libpng"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/ffmpeg/linux/x86_64/include"/>
+					<Add directory="/usr/include/AL"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/pugixml/src"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/Loader"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/Crypto"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/.."/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../Utilities/yaml-cpp/include"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../asmjit/src/asmjit"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/GSL/include"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../Vulkan/Vulkan-LoaderAndValidationLayers/include"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../Vulkan/glslang/glslang/Public"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../Vulkan/glslang"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/hidapi/hidapi"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/GL"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/stblib"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/cereal/include"/>
+					<Add directory="/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/clang/5.0.0/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 rpcs3/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="GitVersion">
+				<Option working_dir="/home/tyler274/Builds/rpcs3/rpcs3"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 GitVersion"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rpcs3_unity">
+				<Option output="/home/tyler274/Builds/rpcs3/bin/rpcs3" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir=""/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-DCMAKE_BUILD"/>
+					<Add option="-DGL_GLEXT_PROTOTYPES"/>
+					<Add option="-DGLX_GLXEXT_PROTOTYPES"/>
+					<Add option="-DLLVM_AVAILABLE"/>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_NO_DEBUG"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3"/>
+					<Add directory="/usr/include/qt"/>
+					<Add directory="/usr/include/qt/QtWidgets"/>
+					<Add directory="/usr/include/qt/QtGui"/>
+					<Add directory="/usr/include/qt/QtCore"/>
+					<Add directory="/usr/lib/qt/mkspecs/linux-g++"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/libpng"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/ffmpeg/linux/x86_64/include"/>
+					<Add directory="/usr/include/AL"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/pugixml/src"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/Loader"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/Crypto"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/.."/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../Utilities/yaml-cpp/include"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../asmjit/src/asmjit"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/GSL/include"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../Vulkan/Vulkan-LoaderAndValidationLayers/include"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../Vulkan/glslang/glslang/Public"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../Vulkan/glslang"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/hidapi/hidapi"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/GL"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/stblib"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/cereal/include"/>
+					<Add directory="/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/clang/5.0.0/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 rpcs3_unity"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rpcs3_unity/fast">
+				<Option output="/home/tyler274/Builds/rpcs3/bin/rpcs3" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir=""/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-DCMAKE_BUILD"/>
+					<Add option="-DGL_GLEXT_PROTOTYPES"/>
+					<Add option="-DGLX_GLXEXT_PROTOTYPES"/>
+					<Add option="-DLLVM_AVAILABLE"/>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_NO_DEBUG"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3"/>
+					<Add directory="/usr/include/qt"/>
+					<Add directory="/usr/include/qt/QtWidgets"/>
+					<Add directory="/usr/include/qt/QtGui"/>
+					<Add directory="/usr/include/qt/QtCore"/>
+					<Add directory="/usr/lib/qt/mkspecs/linux-g++"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/libpng"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/ffmpeg/linux/x86_64/include"/>
+					<Add directory="/usr/include/AL"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/pugixml/src"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/Loader"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/Crypto"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/.."/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../Utilities/yaml-cpp/include"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../asmjit/src/asmjit"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/GSL/include"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../Vulkan/Vulkan-LoaderAndValidationLayers/include"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../Vulkan/glslang/glslang/Public"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../Vulkan/glslang"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/hidapi/hidapi"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/GL"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/stblib"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/rpcs3/../3rdparty/cereal/include"/>
+					<Add directory="/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/clang/5.0.0/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 rpcs3_unity/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="all_unity">
+				<Option working_dir="/home/tyler274/Builds/rpcs3/rpcs3"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 all_unity"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rpcs3_pch">
+				<Option working_dir="/home/tyler274/Builds/rpcs3/rpcs3"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 rpcs3_pch"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="clean_cotire">
+				<Option working_dir="/home/tyler274/Builds/rpcs3/rpcs3"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 clean_cotire"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rpcs3_autogen">
+				<Option working_dir="/home/tyler274/Builds/rpcs3/rpcs3"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 rpcs3_autogen"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/rpcs3/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hidapi-hidraw">
+				<Option output="/home/tyler274/Builds/rpcs3/3rdparty/hidapi/linux/libhidapi-hidraw.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/tyler274/Builds/rpcs3/3rdparty/hidapi/linux"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-DCMAKE_BUILD"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/3rdparty/hidapi/hidapi"/>
+					<Add directory="/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/clang/5.0.0/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/3rdparty/hidapi/linux/Makefile&quot;  VERBOSE=1 hidapi-hidraw"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/3rdparty/hidapi/linux/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/3rdparty/hidapi/linux/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/3rdparty/hidapi/linux/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hidapi-hidraw/fast">
+				<Option output="/home/tyler274/Builds/rpcs3/3rdparty/hidapi/linux/libhidapi-hidraw.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/tyler274/Builds/rpcs3/3rdparty/hidapi/linux"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-DCMAKE_BUILD"/>
+					<Add directory="/home/tyler274/Builds/rpcs3/3rdparty/hidapi/hidapi"/>
+					<Add directory="/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/clang/5.0.0/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/3rdparty/hidapi/linux/Makefile&quot;  VERBOSE=1 hidapi-hidraw/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/3rdparty/hidapi/linux/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/3rdparty/hidapi/linux/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tyler274/Builds/rpcs3/3rdparty/hidapi/linux/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/hidapi/linux/hid.c">
+			<Option target="hidapi-hidraw"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/libpng/png.c">
+			<Option target="png16_static"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/libpng/png.h">
+			<Option target="png16_static"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/libpng/pngconf.h">
+			<Option target="png16_static"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/libpng/pngdebug.h">
+			<Option target="png16_static"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/libpng/pngerror.c">
+			<Option target="png16_static"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/libpng/pngget.c">
+			<Option target="png16_static"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/libpng/pnginfo.h">
+			<Option target="png16_static"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/libpng/pnglibconf.h">
+			<Option target="png16_static"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/libpng/pngmem.c">
+			<Option target="png16_static"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/libpng/pngpread.c">
+			<Option target="png16_static"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/libpng/pngpriv.h">
+			<Option target="png16_static"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/libpng/pngread.c">
+			<Option target="png16_static"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/libpng/pngrio.c">
+			<Option target="png16_static"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/libpng/pngrtran.c">
+			<Option target="png16_static"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/libpng/pngrutil.c">
+			<Option target="png16_static"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/libpng/pngset.c">
+			<Option target="png16_static"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/libpng/pngstruct.h">
+			<Option target="png16_static"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/libpng/pngtrans.c">
+			<Option target="png16_static"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/libpng/pngwio.c">
+			<Option target="png16_static"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/libpng/pngwrite.c">
+			<Option target="png16_static"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/libpng/pngwtran.c">
+			<Option target="png16_static"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/libpng/pngwutil.c">
+			<Option target="png16_static"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/Config.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/Config.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/File.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/File.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/GDBDebugServer.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/GDBDebugServer.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/JIT.cpp">
+			<Option target="rpcs3"/>
+			<Option target="rpcs3_unity"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/JIT.h">
+			<Option target="rpcs3"/>
+			<Option target="rpcs3_unity"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/Log.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/Log.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/StrFmt.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/StrFmt.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/Thread.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/Thread.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/VirtualMemory.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/VirtualMemory.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/bin_patch.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/bin_patch.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/cond.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/cond.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/dynamic_library.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/dynamic_library.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/mutex.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/mutex.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/rXml.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/rXml.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/sema.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/sema.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/version.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/version.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/binary.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/contrib/graphbuilder.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/contrib/graphbuilderadapter.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/contrib/graphbuilderadapter.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/convert.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/directives.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/directives.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/emit.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/emitfromevents.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/emitter.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/emitterstate.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/emitterstate.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/emitterutils.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/emitterutils.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/exceptions.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/exp.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/exp.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/memory.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/node.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/node_data.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/nodebuilder.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/nodebuilder.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/nodeevents.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/nodeevents.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/null.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/ostream_wrapper.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/parse.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/parser.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/regex_yaml.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/regex_yaml.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/scanner.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/scanner.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/scanscalar.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/scanscalar.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/scantag.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/scantag.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/scantoken.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/simplekey.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/singledocparser.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/singledocparser.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/stream.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/stream.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/tag.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Utilities/yaml-cpp/src/tag.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/OGLCompilersDLL/InitializeDll.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/OGLCompilersDLL/InitializeDll.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/SPIRV/GlslangToSpv.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/SPIRV/GlslangToSpv.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/SPIRV/InReadableOrder.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/SPIRV/Logger.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/SPIRV/Logger.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/SPIRV/SPVRemapper.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/SPIRV/SPVRemapper.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/SPIRV/SpvBuilder.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/SPIRV/SpvBuilder.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/SPIRV/disassemble.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/SPIRV/disassemble.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/SPIRV/doc.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/SPIRV/doc.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/GenericCodeGen/CodeGen.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/GenericCodeGen/Link.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/Constant.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/InfoSink.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/Initialize.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/Initialize.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/IntermTraverse.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/Intermediate.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/ParseContextBase.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/ParseHelper.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/ParseHelper.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/PoolAlloc.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/RemoveTree.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/RemoveTree.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/Scan.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/Scan.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/ShaderLang.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/SymbolTable.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/SymbolTable.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/Versions.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/Versions.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/glslang_tab.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/intermOut.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/iomapper.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/iomapper.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/limits.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/linkValidate.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/parseConst.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/preprocessor/Pp.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/preprocessor/PpAtom.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/preprocessor/PpContext.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/preprocessor/PpContext.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/preprocessor/PpScanner.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/preprocessor/PpTokens.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/preprocessor/PpTokens.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/propagateNoContraction.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/propagateNoContraction.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/reflection.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/MachineIndependent/reflection.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/glslang/OSDependent/Unix/ossource.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/hlsl/hlslAttributes.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/hlsl/hlslAttributes.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/hlsl/hlslGrammar.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/hlsl/hlslGrammar.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/hlsl/hlslOpMap.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/hlsl/hlslOpMap.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/hlsl/hlslParseHelper.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/hlsl/hlslParseHelper.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/hlsl/hlslParseables.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/hlsl/hlslParseables.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/hlsl/hlslScanContext.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/hlsl/hlslScanContext.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/hlsl/hlslTokenStream.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/glslang/hlsl/hlslTokenStream.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/arch.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/arch.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/assembler.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/assembler.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/codebuilder.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/codebuilder.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/codecompiler.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/codecompiler.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/codeemitter.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/codeemitter.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/codeholder.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/codeholder.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/constpool.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/constpool.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/cpuinfo.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/cpuinfo.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/func.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/func.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/globals.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/globals.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/inst.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/inst.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/logging.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/logging.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/operand.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/operand.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/osutils.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/osutils.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/regalloc.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/runtime.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/runtime.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/string.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/string.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/utils.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/utils.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/vmem.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/vmem.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/zone.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/base/zone.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/x86/x86assembler.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/x86/x86assembler.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/x86/x86builder.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/x86/x86builder.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/x86/x86compiler.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/x86/x86compiler.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/x86/x86inst.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/x86/x86inst.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/x86/x86instimpl.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/x86/x86internal.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/x86/x86logging.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/x86/x86operand.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/x86/x86operand.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/x86/x86operand_regs.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/asmjit/src/asmjit/x86/x86regalloc.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Crypto/aes.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Crypto/aes.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Crypto/ec.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Crypto/ec.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Crypto/key_vault.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Crypto/key_vault.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Crypto/lz.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Crypto/lz.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Crypto/sha1.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Crypto/sha1.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Crypto/unedat.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Crypto/unedat.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Crypto/unpkg.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Crypto/unpkg.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Crypto/unself.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Crypto/unself.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Crypto/utils.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Crypto/utils.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Audio/AL/OpenALThread.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Audio/AL/OpenALThread.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Audio/ALSA/ALSAThread.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Audio/ALSA/ALSAThread.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Audio/AudioDumper.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Audio/AudioDumper.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Audio/XAudio2/XAudio27Thread.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Audio/XAudio2/XAudio28Thread.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Audio/XAudio2/XAudio2Thread.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Audio/XAudio2/XAudio2Thread.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/CPU/CPUThread.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/CPU/CPUThread.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/CPU/CPUTranslator.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/CPU/CPUTranslator.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/MFC.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/MFC.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellAdec.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellAdec.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellAtrac.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellAtrac.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellAtracMulti.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellAtracMulti.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellAudio.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellAudio.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellAudioOut.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellAudioOut.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellAvconfExt.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellBgdl.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellBgdl.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellCamera.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellCamera.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellCelp8Enc.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellCelp8Enc.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellCelpEnc.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellCelpEnc.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellCrossController.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellDaisy.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellDaisy.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellDmux.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellDmux.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellFiber.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellFiber.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellFont.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellFont.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellFontFT.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellFontFT.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellFs.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellFs.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellGame.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellGame.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellGameExec.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellGcmSys.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellGcmSys.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellGem.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellGem.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellGifDec.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellGifDec.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellHttp.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellHttp.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellHttpUtil.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellHttpUtil.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellImeJp.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellImeJp.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellJpgDec.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellJpgDec.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellJpgEnc.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellJpgEnc.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellKb.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellKb.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellKey2char.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellL10n.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellL10n.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellLibprof.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellMic.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellMic.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellMouse.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellMouse.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellMsgDialog.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellMsgDialog.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellMusic.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellMusic.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellMusicDecode.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellMusicExport.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellNetCtl.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellNetCtl.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellOskDialog.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellOskDialog.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellOvis.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellPad.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellPad.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellPamf.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellPamf.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellPhotoDecode.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellPhotoExport.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellPhotoImport.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellPngDec.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellPngDec.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellPngEnc.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellPrint.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellRec.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellRemotePlay.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellResc.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellResc.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellRtc.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellRtc.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellRtcAlarm.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellRudp.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellRudp.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSail.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSail.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSailRec.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSaveData.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSaveData.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellScreenshot.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellScreenshot.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSearch.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSearch.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSheap.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSpudll.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSpudll.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSpurs.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSpurs.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSpursJq.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSpursJq.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSpursSpu.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSsl.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellStorage.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSubdisplay.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSubdisplay.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSync.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSync.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSync2.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSync2.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSysconf.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSysconf.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSysmodule.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSysutil.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSysutil.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSysutilAp.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSysutilAvc.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSysutilAvc2.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSysutilAvc2.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSysutilMisc.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellSysutilNpEula.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellUsbd.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellUsbd.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellUsbpspcm.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellUserInfo.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellUserInfo.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellVdec.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellVdec.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellVideoExport.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellVideoOut.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellVideoOut.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellVideoUpload.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellVideoUpload.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellVoice.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellVoice.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellVpost.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellVpost.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellWebBrowser.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cellWebBrowser.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/cell_FreeType2.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/libmedi.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/libmixer.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/libmixer.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/libsnd3.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/libsnd3.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/libsynth2.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/libsynth2.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sceNp.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sceNp.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sceNp2.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sceNp2.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sceNpClans.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sceNpClans.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sceNpCommerce2.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sceNpCommerce2.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sceNpSns.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sceNpSns.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sceNpTrophy.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sceNpTrophy.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sceNpTus.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sceNpTus.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sceNpUtil.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sceNpUtil.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sysPrxForUser.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sysPrxForUser.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sys_game.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sys_heap.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sys_io.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sys_libc.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sys_libc_.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sys_lv2dbg.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sys_lv2dbg.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sys_lwcond_.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sys_lwmutex_.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sys_mempool.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sys_mmapper_.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sys_net.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sys_net.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sys_ppu_thread_.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sys_prx_.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sys_rsxaudio_.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sys_spinlock.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/Modules/sys_spu_.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/PPUAnalyser.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/PPUAnalyser.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/PPUDisAsm.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/PPUDisAsm.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/PPUFunction.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/PPUFunction.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/PPUInterpreter.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/PPUInterpreter.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/PPUModule.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/PPUModule.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/PPUThread.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/PPUThread.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/PPUTranslator.cpp">
+			<Option target="rpcs3"/>
+			<Option target="rpcs3_unity"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/PPUTranslator.h">
+			<Option target="rpcs3"/>
+			<Option target="rpcs3_unity"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/RawSPUThread.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/RawSPUThread.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/SPUASMJITRecompiler.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/SPUASMJITRecompiler.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/SPUAnalyser.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/SPUAnalyser.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/SPUDisAsm.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/SPUDisAsm.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/SPUInterpreter.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/SPUInterpreter.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/SPURecompiler.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/SPURecompiler.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/SPUThread.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/SPUThread.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/lv2.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_cond.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_cond.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_dbg.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_dbg.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_event.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_event.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_event_flag.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_event_flag.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_fs.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_fs.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_interrupt.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_interrupt.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_lwcond.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_lwcond.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_lwmutex.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_lwmutex.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_memory.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_memory.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_mmapper.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_mmapper.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_mutex.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_mutex.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_ppu_thread.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_ppu_thread.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_process.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_process.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_prx.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_prx.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_rsx.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_rsx.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_rwlock.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_rwlock.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_semaphore.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_semaphore.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_spu.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_spu.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_ss.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_ss.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_time.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_time.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_timer.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_timer.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_trace.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_trace.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_tty.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_tty.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_vm.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Cell/lv2/sys_vm.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/IdManager.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/IdManager.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Memory/Memory.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Memory/Memory.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Memory/vm.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Memory/vm.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Memory/wait_engine.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/Memory/wait_engine.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/ARMv7DisAsm.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/ARMv7DisAsm.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/ARMv7Function.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/ARMv7Function.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/ARMv7Interpreter.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/ARMv7Interpreter.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/ARMv7Module.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/ARMv7Module.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/ARMv7Thread.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/ARMv7Thread.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceAppMgr.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceAppMgr.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceAppUtil.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceAppUtil.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceAudio.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceAudio.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceAudioIn.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceAudioIn.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceAudiodec.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceAudiodec.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceAudioenc.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceAudioenc.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceCamera.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceCamera.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceCodecEngine.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceCodecEngine.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceCommonDialog.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceCommonDialog.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceCtrl.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceCtrl.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceDbg.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceDbg.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceDeci4p.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceDeci4p.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceDeflt.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceDeflt.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceDisplay.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceDisplay.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceFiber.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceFiber.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceFios.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceFios.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceFpu.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceFpu.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceGxm.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceGxm.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceHttp.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceHttp.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceIme.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceIme.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceJpeg.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceJpeg.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceJpegEnc.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceJpegEnc.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceLibKernel.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceLibKernel.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceLibXml.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceLibXml.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceLibc.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceLibc.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceLibm.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceLibm.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceLibstdcxx.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceLibstdcxx.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceLiveArea.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceLiveArea.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceLocation.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceLocation.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceMd5.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceMd5.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceMotion.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceMotion.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceMt19937.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceMt19937.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceNet.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceNet.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceNetCtl.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceNetCtl.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceNgs.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceNgs.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceNpBasic.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceNpBasic.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceNpCommon.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceNpCommon.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceNpManager.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceNpManager.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceNpMatching.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceNpMatching.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceNpScore.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceNpScore.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceNpUtility.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceNpUtility.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/scePerf.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/scePerf.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/scePgf.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/scePgf.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/scePhotoExport.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/scePhotoExport.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceRazorCapture.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceRazorCapture.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceRtc.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceRtc.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceSas.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceSas.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceScreenShot.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceScreenShot.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceSfmt.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceSha.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceSqlite.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceSqlite.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceSsl.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceSsl.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceSulpha.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceSulpha.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceSysmodule.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceSysmodule.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceSystemGesture.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceSystemGesture.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceTouch.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceTouch.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceUlt.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceUlt.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceVideodec.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceVideodec.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceVoice.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceVoice.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceVoiceQoS.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/PSP2/Modules/sceVoiceQoS.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/CgBinaryFragmentProgram.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/CgBinaryVertexProgram.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/Common/BufferUtils.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/Common/BufferUtils.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/Common/FragmentProgramDecompiler.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/Common/FragmentProgramDecompiler.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/Common/ProgramStateCache.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/Common/ProgramStateCache.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/Common/ShaderParam.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/Common/ShaderParam.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/Common/TextureUtils.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/Common/TextureUtils.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/Common/VertexProgramDecompiler.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/Common/VertexProgramDecompiler.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/Common/surface_store.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/Common/surface_store.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/D3D12/D3D12Buffer.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/D3D12/D3D12CommonDecompiler.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/D3D12/D3D12CommonDecompiler.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/D3D12/D3D12Formats.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/D3D12/D3D12Formats.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/D3D12/D3D12FragmentProgramDecompiler.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/D3D12/D3D12FragmentProgramDecompiler.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/D3D12/D3D12GSRender.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/D3D12/D3D12GSRender.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/D3D12/D3D12MemoryHelpers.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/D3D12/D3D12MemoryHelpers.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/D3D12/D3D12Overlay.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/D3D12/D3D12PipelineState.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/D3D12/D3D12PipelineState.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/D3D12/D3D12RenderTargetSets.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/D3D12/D3D12RenderTargetSets.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/D3D12/D3D12Texture.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/D3D12/D3D12Utils.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/D3D12/D3D12Utils.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/D3D12/D3D12VertexProgramDecompiler.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/D3D12/D3D12VertexProgramDecompiler.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/GL/GLCommonDecompiler.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/GL/GLCommonDecompiler.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/GL/GLFragmentProgram.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/GL/GLFragmentProgram.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/GL/GLGSRender.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/GL/GLGSRender.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/GL/GLHelpers.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/GL/GLHelpers.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/GL/GLRenderTargets.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/GL/GLRenderTargets.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/GL/GLTexture.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/GL/GLTexture.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/GL/GLTextureCache.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/GL/GLTextureCache.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/GL/GLVertexBuffers.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/GL/GLVertexProgram.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/GL/GLVertexProgram.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/GL/OpenGL.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/GL/OpenGL.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/GSRender.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/GSRender.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/Null/NullGSRender.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/Null/NullGSRender.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/RSXTexture.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/RSXTexture.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/RSXThread.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/RSXThread.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/VK/VKCommonDecompiler.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/VK/VKCommonDecompiler.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/VK/VKFormats.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/VK/VKFormats.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/VK/VKFragmentProgram.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/VK/VKFragmentProgram.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/VK/VKGSRender.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/VK/VKGSRender.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/VK/VKHelpers.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/VK/VKHelpers.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/VK/VKProgramPipeline.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/VK/VKTexture.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/VK/VKVertexBuffers.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/VK/VKVertexProgram.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/VK/VKVertexProgram.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/VK/VulkanAPI.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/VK/VulkanAPI.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/gcm_enums.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/gcm_enums.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/gcm_printing.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/gcm_printing.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/rsx_methods.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/rsx_methods.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/rsx_utils.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/RSX/rsx_utils.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/System.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/System.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/VFS.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Emu/VFS.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Loader/ELF.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Loader/ELF.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Loader/PSF.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Loader/PSF.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Loader/PUP.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Loader/PUP.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Loader/TAR.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Loader/TAR.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Loader/TROPUSR.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Loader/TROPUSR.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Loader/TRP.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/Loader/TRP.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/basic_keyboard_handler.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/basic_keyboard_handler.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/basic_mouse_handler.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/basic_mouse_handler.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/cotire/rpcs3_CXX_prefix.cxx.rule">
+			<Option target="rpcs3"/>
+			<Option target="rpcs3_unity"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/cotire/rpcs3_CXX_prefix.hxx.pch.rule">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/cotire/rpcs3_CXX_prefix.hxx.rule">
+			<Option target="rpcs3"/>
+			<Option target="rpcs3_unity"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/cotire/rpcs3_CXX_unity.cxx">
+			<Option target="rpcs3_unity"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/cotire/rpcs3_CXX_unity.cxx.rule">
+			<Option target="rpcs3_unity"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/ds4_pad_handler.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/ds4_pad_handler.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/keyboard_pad_handler.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/keyboard_pad_handler.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/main.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/mm_joystick_handler.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/mm_joystick_handler.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/resources.qrc">
+			<Option target="rpcs3"/>
+			<Option target="rpcs3_unity"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3_api.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3_app.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3_app.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3_autogen/EWIEGA46WW/qrc_resources.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3_autogen/moc_compilation.cpp">
+			<Option target="rpcs3"/>
+			<Option target="rpcs3_unity"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3_version.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3_version.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/about_dialog.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/about_dialog.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/auto_pause_settings_dialog.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/auto_pause_settings_dialog.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/cg_disasm_window.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/cg_disasm_window.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/debugger_frame.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/debugger_frame.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/emu_settings.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/emu_settings.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/game_list_frame.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/game_list_frame.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/game_list_grid.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/game_list_grid.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/game_list_grid_delegate.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/game_list_grid_delegate.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/gl_gs_frame.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/gl_gs_frame.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/gs_frame.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/gs_frame.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/gui_settings.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/gui_settings.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/instruction_editor_dialog.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/instruction_editor_dialog.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/kernel_explorer.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/kernel_explorer.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/log_frame.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/log_frame.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/main_window.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/main_window.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/memory_string_searcher.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/memory_string_searcher.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/memory_viewer_panel.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/memory_viewer_panel.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/msg_dialog_frame.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/msg_dialog_frame.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/pad_settings_dialog.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/pad_settings_dialog.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/register_editor_dialog.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/register_editor_dialog.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/rsx_debugger.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/rsx_debugger.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/save_data_dialog.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/save_data_dialog.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/save_data_utility.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/save_data_utility.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/settings_dialog.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/settings_dialog.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/vfs_dialog.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/vfs_dialog.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/vfs_dialog_tab.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/vfs_dialog_tab.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/welcome_dialog.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3qt/welcome_dialog.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/stb_image.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/stdafx.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/stdafx.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/sys_gamepad.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/sys_gamepad.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/xinput_pad_handler.cpp">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/xinput_pad_handler.h">
+			<Option target="rpcs3"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/libpng/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\3rdparty\libpng\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/libpng/libpng.pc.in">
+			<Option virtualFolder="CMake Files\3rdparty\libpng\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/libpng/libpng-config.in">
+			<Option virtualFolder="CMake Files\3rdparty\libpng\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/libpng/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\3rdparty\libpng\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/libpng/libpng.pc.in">
+			<Option virtualFolder="CMake Files\3rdparty\libpng\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/libpng/libpng-config.in">
+			<Option virtualFolder="CMake Files\3rdparty\libpng\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/libpng/scripts/pnglibconf.h.prebuilt">
+			<Option virtualFolder="CMake Files\3rdparty\libpng\scripts\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/libpng/scripts/pnglibconf.h.prebuilt">
+			<Option virtualFolder="CMake Files\3rdparty\libpng\scripts\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/3rdparty/hidapi/linux/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\3rdparty\hidapi\linux\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/Vulkan/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Vulkan\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\rpcs3\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/resources.qrc">
+			<Option virtualFolder="CMake Files\rpcs3\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3_CXX_cotire.cmake">
+			<Option virtualFolder="CMake Files\rpcs3\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\rpcs3\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/resources.qrc">
+			<Option virtualFolder="CMake Files\rpcs3\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/rpcs3_CXX_cotire.cmake">
+			<Option virtualFolder="CMake Files\rpcs3\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/cmake_modules/cotire.cmake">
+			<Option virtualFolder="CMake Files\rpcs3\cmake_modules\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/cmake_modules/ConfigureCompiler.cmake">
+			<Option virtualFolder="CMake Files\rpcs3\cmake_modules\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/cmake_modules/FindGLEW.cmake">
+			<Option virtualFolder="CMake Files\rpcs3\cmake_modules\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/cmake_modules/cotire.cmake">
+			<Option virtualFolder="CMake Files\rpcs3\cmake_modules\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/cmake_modules/ConfigureCompiler.cmake">
+			<Option virtualFolder="CMake Files\rpcs3\cmake_modules\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/rpcs3/cmake_modules/FindGLEW.cmake">
+			<Option virtualFolder="CMake Files\rpcs3\cmake_modules\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5/Qt5ConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5/Qt5Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5/Qt5ModuleLocation.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5/Qt5ConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5/Qt5Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5/Qt5ModuleLocation.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5GuiConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEglFSKmsEglDeviceIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEglFSKmsGbmIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QGtk3ThemePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QJp2Plugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QLibInputPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QMngPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QTsLibPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QVirtualKeyboardPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QWaylandEglPlatformIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QWaylandIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QWaylandXCompositeEglPlatformIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QWaylandXCompositeGlxPlatformIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5GuiConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEglFSKmsEglDeviceIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEglFSKmsGbmIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QGtk3ThemePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QJp2Plugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QLibInputPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QMngPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QTsLibPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QVirtualKeyboardPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QWaylandEglPlatformIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QWaylandIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QWaylandXCompositeEglPlatformIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QWaylandXCompositeGlxPlatformIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Core/Qt5CoreConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Core/Qt5CoreMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Core/Qt5CoreConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/Qt5Core/Qt5CoreMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/llvm/LLVMConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\llvm\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/llvm/LLVMConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\llvm\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/llvm/LLVMConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\llvm\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib64/cmake/llvm/LLVMConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib64\cmake\llvm\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib/cmake/llvm/LLVMExports.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\llvm\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib/cmake/llvm/LLVMExports-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\llvm\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib/cmake/llvm/LLVM-Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\llvm\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib/cmake/llvm/LLVMExports.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\llvm\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib/cmake/llvm/LLVMExports-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\llvm\"/>
+		</Unit>
+		<Unit filename="/home/tyler274/Builds/rpcs3/../../../../usr/lib/cmake/llvm/LLVM-Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\llvm\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
