@@ -73,7 +73,7 @@ main_window::main_window(QWidget *parent) : QMainWindow(parent), m_sys_menu_open
 		}
 	}
 	ui->sizeSlider->setSliderPosition(icon_size_index);
-	ui->toolBar->addWidget(ui->sizeSlider);
+	ui->toolBar->addWidget(ui->sizeSliderContainer);
 	ui->toolBar->addSeparator();
 	ui->toolBar->addWidget(ui->searchBar);
 
@@ -155,9 +155,11 @@ void main_window::SetAppIconFromPath(const std::string path)
 	// get Icon for the gs_frame from path. this handles presumably all possible use cases
 	QString qpath = qstr(path);
 	std::string icon_list[] = { "/ICON0.PNG", "/PS3_GAME/ICON0.PNG" };
-	std::string path_list[] = { path, sstr(qpath.section("/", 0, -2)) ,sstr(qpath.section("/", 0, -3)) };
+	std::string path_list[] = { path, sstr(qpath.section("/", 0, -2)), sstr(qpath.section("/", 0, -3)) };
 	for (std::string pth : path_list)
 	{
+		if (!fs::is_dir(pth)) continue;
+
 		for (std::string ico : icon_list)
 		{
 			ico = pth + ico;
@@ -988,6 +990,17 @@ void main_window::CreateConnects()
 		connect(&dlg, &settings_dialog::GuiSettingsSaveRequest, this, &main_window::SaveWindowState);
 		connect(&dlg, &settings_dialog::GuiSettingsSyncRequest, [=]() {ConfigureGuiFromSettings(true); });
 		connect(&dlg, &settings_dialog::GuiStylesheetRequest, this, &main_window::RequestGlobalStylesheetChange);
+		connect(&dlg, &settings_dialog::accepted, [this](){
+			gameListFrame->LoadSettings();
+			QColor tbc = guiSettings->GetValue(GUI::mw_toolBarColor).value<QColor>();
+			ui->toolBar->setStyleSheet(QString(
+				"QToolBar { background-color: rgba(%1, %2, %3, %4); }"
+				"QToolBar::separator {background-color: rgba(%5, %6, %7, %8); width: 1px; margin-top: 2px; margin-bottom: 2px;}"
+				"QSlider { background-color: rgba(%1, %2, %3, %4); }"
+				"QLineEdit { background-color: rgba(%1, %2, %3, %4); }")
+				.arg(tbc.red()).arg(tbc.green()).arg(tbc.blue()).arg(tbc.alpha())
+				.arg(tbc.red() - 20).arg(tbc.green() - 20).arg(tbc.blue() - 20).arg(tbc.alpha() - 20));
+		});
 		dlg.exec();
 	};
 	connect(ui->confCPUAct,    &QAction::triggered, [=]() { openSettings(0); });
@@ -1248,6 +1261,15 @@ void main_window::ConfigureGuiFromSettings(bool configureAll)
 	gameListFrame->setVisible(ui->showGameListAct->isChecked());
 	gameListFrame->SetToolBarVisible(ui->showGameToolBarAct->isChecked());
 	ui->toolBar->setVisible(ui->showToolBarAct->isChecked());
+
+	QColor tbc = guiSettings->GetValue(GUI::mw_toolBarColor).value<QColor>();
+	ui->toolBar->setStyleSheet(QString(
+		"QToolBar { background-color: rgba(%1, %2, %3, %4); }"
+		"QToolBar::separator {background-color: rgba(%5, %6, %7, %8); width: 1px; margin-top: 2px; margin-bottom: 2px;}"
+		"QSlider { background-color: rgba(%1, %2, %3, %4); }"
+		"QLineEdit { background-color: rgba(%1, %2, %3, %4); }")
+		.arg(tbc.red()).arg(tbc.green()).arg(tbc.blue()).arg(tbc.alpha())
+		.arg(tbc.red() - 20).arg(tbc.green() - 20).arg(tbc.blue() - 20).arg(tbc.alpha() - 20));
 
 	ui->showCatHDDGameAct->setChecked(guiSettings->GetCategoryVisibility(Category::Non_Disc_Game));
 	ui->showCatDiscGameAct->setChecked(guiSettings->GetCategoryVisibility(Category::Disc_Game));
