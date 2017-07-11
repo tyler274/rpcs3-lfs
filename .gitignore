@@ -92,12 +92,4 @@ rpcs3/rpcs3_*_cotire.cmake
 moc_*.cpp
 qrc_resources.cpp
 rpcs3_automoc.cpp
-
-cmake-build-debug/
-cmake-build-release/
-bin/
-3rdparty/
-
-rsx_program_decompiler/
-
-Project.cbp
+ui_*.h
