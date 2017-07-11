@@ -78,7 +78,7 @@ namespace rsx
             }
 
 			case CELL_GCM_CONTEXT_DMA_TO_MEMORY_GET_NOTIFY0:
-				return 0x40 + offset; // TODO: Properly implement
+                fmt::throw_exception("Unimplemented CELL_GCM_CONTEXT_DMA_TO_MEMORY_GET_NOTIFY0 (offset=0x%x, location=0x%x)" HERE, offset, location);
 
 			case CELL_GCM_CONTEXT_DMA_NOTIFY_MAIN_0:
 				fmt::throw_exception("Unimplemented CELL_GCM_CONTEXT_DMA_NOTIFY_MAIN_0 (offset=0x%x, location=0x%x)" HERE, offset, location);
@@ -403,7 +403,7 @@ namespace rsx
 				if (get_system_time() - start_time > vblank_count * 1000000 / 60)
 				{
 					vblank_count++;
-                    sys_rsx_context_attribute(0x55555555, 0x101, 0, 0, 0, 0);
+                    sys_rsx_context_attribute(0x55555555, 0xFED, 1, 0, 0, 0);
 					if (vblank_handler)
 					{
 						intr_thread->cmd_list
