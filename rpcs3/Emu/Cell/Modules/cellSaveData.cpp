@@ -202,6 +202,13 @@ static NEVER_INLINE s32 savedata_op(ppu_thread &ppu, u32 operation, u32 version,
 				return CELL_OK;
 			}
 
+			// if the callback has returned ok, lets return OK.
+			// typically used at game launch when no list is actually required.
+			if ((result->result == CELL_SAVEDATA_CBRESULT_OK_LAST) || (result->result == CELL_SAVEDATA_CBRESULT_OK_LAST_NOCONFIRM))
+			{
+				return CELL_OK;
+			}
+
 			// Clean save data list
 			save_entries.erase(std::remove_if(save_entries.begin(), save_entries.end(), [&listSet](const SaveDataEntry& entry) -> bool
 			{
